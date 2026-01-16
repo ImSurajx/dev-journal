@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    /* image properties */
+    background-image: url(https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    background-position: center;
+    /* background-position: contain; // to cover height wise;
+    background-repeat: no-repeat; // if we use contain */
+}
+
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    color: red;
+    font-size: 100px;
+    font-weight: 100;
+}
+
+#box1 {
+    height: 200px;
+    width: 200px;
+    /* background: linear-gradient(to right top,red 10%, blue 80%, black 10%); */
+    /* background: radial-gradient(yellow, orange, red); */
+    /* background: conic-gradient(orange, white, green); */
+    border-radius: 50%;
+}
+
+#outer {
+    height: 200px;
+    width: 200px;
+    background-color: seagreen;
+    border: 1px solid white;
+}
+
+#inner {
+    /* percentage depends on parents */
+    height: 50%;
+    width: 50%;
+    background-color: red;
+    /* margin or padding properties:
+        - margin: outside space
+        - padding: inside space
+    */
+    color: #fff;
+    margin: 10px 50px;
+    padding: 20px 10px;
+
+    /* border properties: dashed, doted, solid, none */
+    border: 2px dashed white;
+    border-radius: 10px;
+    /* border: none; */
+}
