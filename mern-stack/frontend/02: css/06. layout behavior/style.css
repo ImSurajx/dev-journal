@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 300;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+/* 
+transform: move element according to element hight & width depend on size.
+ex: if element has 200px height & 200px width, if we use 50% in x then it will move 100px in x axis 
+same goes for y-axis.
+transform: translateX(value);
+transform: translateY(value);
+transform: translate(value); -> combine x & y axis
+*/
+
+#box1 {
+    height: 200px;
+    width: 200px;
+    background-color: crimson;
+    /* position: absolute; */
+    /* left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); */
+}
+
+#box2 {
+    height: 200px;
+    width: 200px;
+    background-color: lightblue;
+    /* position: absolute;
+    left: 50%;
+    top: 50%; */
+}
+
+#box3 {
+    height: 200px;
+    width: 200px;
+    background-color: coral;
+    /* position: absolute;
+    left: 50%;
+    top: 50%; */
+}
