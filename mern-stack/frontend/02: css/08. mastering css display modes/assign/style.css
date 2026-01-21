@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+#parent {
+    height: 50%;
+    width: 100%;
+    border: 1px solid black;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+    overflow: auto;
+}
+
+.child {
+    height: 100%;
+    width: 300px;
+    border: 1px solid black;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
