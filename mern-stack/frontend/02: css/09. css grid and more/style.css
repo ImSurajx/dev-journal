@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background: #000;
+}
+
+/* main { */
+/* height: 100%; */
+/* width: 100%; */
+/* background: #000; */
+/* display: grid; */
+/* elementn in each rows */
+/* grid-template-columns: repeat(4, 1fr); */
+/* element in eacg cols */
+/* grid-template-rows: 1fr 1fr 1fr 1fr; */
+/* gap: 10px; */
+/* } */
+
+/* main .child {
+    background-color: crimson;
+    border: 1px solid #fff;
+} */
+
+/* main{
+    height: 100%;
+    width: 100%;
+    background: #000;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 5px;
+}
+
+.child{
+    background: crimson;
+    border: 1px solid #fff;
+} */
+
+/* #child1{
+    grid-row: 1/4;
+    grid-column: 1/2;
+} */
+
+main {
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 60px 1fr 80px;
+    grid-template-areas:
+        "header header"
+        "aside  section"
+        "footer footer";
+}
+
+header {
+    background: crimson;
+    grid-area: header;
+}
+
+aside {
+    background: coral;
+    grid-area: aside;
+}
+
+section {
+    background: cornflowerblue;
+    grid-area: section;
+}
+
+footer {
+    background: royalblue;
+    grid-area: footer;
+}

@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background: #000;
+}
+
+main {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 0.5fr 0.5fr;
+    gap: 5px;
+    /* grid area: depends on number of rows */
+    grid-template-areas:
+        "header header header"
+        "section section section"
+        "divLeft bottomUp divRight"
+        "divLeft bottomDown divRight";
+
+}
+
+header {
+    background: crimson;
+    border: 1px solid #fff;
+    grid-area: header;
+}
+
+section {
+    background: coral;
+    border: 1px solid #fff;
+    grid-area: section;
+}
+
+#divLeft {
+    background: brown;
+    border: 1px solid #fff;
+    grid-area: divLeft;
+}
+
+#divRight {
+    background: orange;
+    border: 1px solid #fff;
+    grid-area: divRight;
+}
+
+#bottomUp {
+    background: yellowgreen;
+    border: 1px solid #fff;
+    grid-area: bottomUp;
+}
+
+#bottomDown {
+    background: grey;
+    border: 1px solid #fff;
+    grid-area: bottomDown;
+}
