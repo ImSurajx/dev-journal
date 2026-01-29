@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 100;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background: #000;
+    color: #fff;
+}
+
+/* 
+units & viewport: the real foundation
+
+absolute units:
+px: this unit is fixed, & depend on the screen like px varry according to different screen size.
+
+relative units:
+percentage(%): depend on parent, take x percent of parent.
+vw(viewport width): depends on screen width (horizontal).
+vh(viewport height): depends on screen height (vertical).
+vmin(depends on minimum width/height) whoever is less in screen.
+vmax(depends on maximum width/height) whoever is less in screen.
+em: depends on parent, on changing value of parent, child values also change.
+rem: depends on root parent, 1rem = 16px by default.
+
+modern units:
+ch: manage number of characters in each line.
+lh: take space accroding to line height.
+*/
+
+
+
+/* 
+ex: pxiels (px)
+
+h1{
+    font-size: 50px;
+}
+
+#box{
+    height: 200px;
+    width: 200px;
+    background: crimson;
+}
+
+#box .inner{
+    height: 100px;
+    width: 100px;
+    background: coral;
+} */
+
+/* 
+ex: percentage %
+#box{
+    height: 50%;
+    width: 50%;
+    background: crimson;
+}
+
+#box .inner{
+    height: 25%;
+    width: 25%;
+    background: cornflowerblue;
+} */
+
+
+/* 
+ex: vw or vh
+#box {
+    height: 20vh;
+    width: 20vw;
+    background: crimson;
+} 
+*/
+
+/* 
+ex: vmax, vmin
+h1 {
+    font-size: 10vmax;
+}
+
+#box {
+    height: 20vmax;
+    width: 20vmax;
+    background: crimson;
+}
+*/
+/* 
+ex: em or rem
+#box{
+    height: 500px;
+    width: 500px;
+    background: crimson;
+    parent values = em
+    font-size: 20px; 
+}
+
+#box h1{ 
+     here 1em mean 20px, depends on parent sizes.
+    font-size: 1.5em;
+}
+#box p{
+    font-size: 1em;
+} 
+*/
+
+/* 
+ex: ch or lh: depend on character -> not preferd
+h1{
+    width: 20ch; 
+    margin-bottom: 3lh;
+} 
+*/
