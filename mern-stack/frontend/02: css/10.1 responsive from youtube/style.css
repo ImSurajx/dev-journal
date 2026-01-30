@@ -117,3 +117,101 @@ h1{
     margin-bottom: 3lh;
 } 
 */
+
+/* 
+    flex-direction: change the direction of flex.
+    row: default behaviour of flex.
+    column: x-axis become y-axis & y-axis become x-axis.
+    column-reverse: flex-start become flex-end, flex-end become flex-start in y-axis.
+    row-reverse: same like column-reverse but in x-axis.
+*/
+/* 
+align-items: work on y-axis by default
+    - flex-start: move item to start of x-axis.
+    - flex-end: move item to end of x-axis.
+    - center: move item to the center of x-axis.
+*/
+
+/* 
+justify-content: work on x-axis by default 
+    - flex-start: move item to start of x-axis.
+    - flex-end: move item to end of x-axis.
+    - center: move item to the center of x-axis.
+    - space-betweeen:  give space between the elements.
+    - space-around: give space around the elements.
+    - spece-evenly: add even space between the elements
+*/
+
+/* 
+    flex-wrap:
+        wrap: element will stop shrink, & move into next line
+        nowrap: element will shrink & move into next line.
+    flex-shrink: (child)
+        0: shrink flase mean element will be shrink
+*/
+
+#parent {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;  
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+
+/* #child1 {
+    height: 200px;
+    width: 200px;
+    background: crimson;
+    border: 1px solid #fff;
+    flex-shrink: 1;
+} */
+/* 
+#child2 {
+    height: 200px;
+    width: 200px;
+    background: coral;
+    border: 1px solid #fff;
+}
+
+#child3 {
+    height: 200px;
+    width: 200px;
+    background: whitesmoke;
+    border: 1px solid #fff;
+}
+
+#child4 {
+    height: 200px;
+    width: 200px;
+    background: orange;
+    border: 1px solid #fff;
+}
+
+#child5 {
+    height: 200px;
+    width: 200px;
+    background: green;
+    border: 1px solid #fff;
+} */
+
+main{
+    background: crimson;
+    width: 100%;
+    height: 2rem;
+}
+
+nav{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+nav a{
+    text-decoration: none;
+    color: #fff;
+}
