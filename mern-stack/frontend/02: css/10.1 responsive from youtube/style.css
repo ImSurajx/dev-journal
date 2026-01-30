@@ -14,27 +14,59 @@ body {
     color: #fff;
 }
 
-/* 
-units & viewport: the real foundation
+/* =================== CSS UNITS & VIEWPORT — QUICK REVISION NOTES ===================
 
-absolute units:
-px: this unit is fixed, & depend on the screen like px varry according to different screen size.
+FOUNDATION:
+Units decide how elements scale across different screen sizes.
 
-relative units:
-percentage(%): depend on parent, take x percent of parent.
-vw(viewport width): depends on screen width (horizontal).
-vh(viewport height): depends on screen height (vertical).
-vmin(depends on minimum width/height) whoever is less in screen.
-vmax(depends on maximum width/height) whoever is less in screen.
-em: depends on parent, on changing value of parent, child values also change.
-rem: depends on root parent, 1rem = 16px by default.
+1) Absolute Units
+   px → fixed unit
+        - size remains constant
+        - varies visually across different screen resolutions
+        - NOT responsive
 
-modern units:
-ch: manage number of characters in each line.
-lh: take space accroding to line height.
-*/
+2) Relative Units
 
+   %  → relative to parent element
+        - width/height take percentage of parent
 
+   vw → viewport width
+        - 1vw = 1% of screen width (horizontal)
+
+   vh → viewport height
+        - 1vh = 1% of screen height (vertical)
+
+   vmin → minimum of vw or vh
+          - adapts to smaller screen dimension
+
+   vmax → maximum of vw or vh
+          - adapts to larger screen dimension
+
+   em → relative to parent font-size
+        - changes in parent affect child
+        - can compound (careful)
+
+   rem → relative to root (html)
+         - 1rem = 16px by default
+         - best for consistent scaling
+
+3) Modern / Typographic Units
+
+   ch → width of "0" character
+        - controls characters per line
+        - useful for readable text blocks
+
+   lh → based on line-height
+        - spacing adapts to text rhythm
+
+WHEN TO USE WHAT:
+- px  → borders, shadows
+- rem → fonts, spacing (recommended)
+- %   → layouts inside parents
+- vw/vh → full-screen sections
+- ch  → text width control
+
+===================================================================================== */
 
 /* 
 ex: pxiels (px)
@@ -118,39 +150,61 @@ h1{
 } 
 */
 
-/* 
-    flex-direction: change the direction of flex.
-    row: default behaviour of flex.
-    column: x-axis become y-axis & y-axis become x-axis.
-    column-reverse: flex-start become flex-end, flex-end become flex-start in y-axis.
-    row-reverse: same like column-reverse but in x-axis.
-*/
-/* 
-align-items: work on y-axis by default
-    - flex-start: move item to start of x-axis.
-    - flex-end: move item to end of x-axis.
-    - center: move item to the center of x-axis.
-*/
+/* ======================= FLEXBOX — QUICK REVISION NOTES =======================
 
-/* 
-justify-content: work on x-axis by default 
-    - flex-start: move item to start of x-axis.
-    - flex-end: move item to end of x-axis.
-    - center: move item to the center of x-axis.
-    - space-betweeen:  give space between the elements.
-    - space-around: give space around the elements.
-    - spece-evenly: add even space between the elements
-*/
+1) flex-direction (defines main axis direction)
+   row             → default (left → right)
+   row-reverse     → right → left (x-axis reversed)
+   column          → top → bottom (x-axis ↔ y-axis swap)
+   column-reverse  → bottom → top (y-axis reversed)
 
-/* 
-    flex-wrap:
-        wrap: element will stop shrink, & move into next line
-        nowrap: element will shrink & move into next line.
-    flex-shrink: (child)
-        0: shrink flase mean element will be shrink
-*/
+2) Main Axis vs Cross Axis
+   - Main axis  → depends on flex-direction
+   - Cross axis → perpendicular to main axis
+   row    → main: x-axis | cross: y-axis
+   column → main: y-axis | cross: x-axis
 
-#parent {
+3) justify-content (works on MAIN axis)
+   flex-start     → items at start of main axis
+   flex-end       → items at end of main axis
+   center         → items at center
+   space-between  → space only between items
+   space-around   → space around items
+   space-evenly   → equal space everywhere
+
+4) align-items (works on CROSS axis)
+   flex-start → items at start of cross axis
+   flex-end   → items at end of cross axis
+   center     → items centered on cross axis
+   stretch    → default, items stretch to fill
+
+5) flex-wrap
+   nowrap → default, items shrink to stay in one line
+   wrap   → items move to next line (no shrinking)
+   wrap-reverse → lines wrap in reverse direction
+
+6) Child Properties
+   flex-grow   → how much item grows (0 = no grow)
+   flex-shrink → how much item shrinks (0 = no shrink)
+   flex-basis  → initial size before grow/shrink
+
+7) Shorthand
+   flex: grow shrink basis;
+   Example:
+   flex: 1 0 200px;
+
+8) Common Confusion (IMPORTANT)
+   - justify-content ≠ always x-axis
+   - align-items ≠ always y-axis
+   Axis depends on flex-direction
+
+9) Flex vs Grid
+   Flex → 1D layout (row OR column)
+   Grid → 2D layout (row + column)
+
+=============================================================================== */
+
+/* #parent {
     height: 100%;
     width: 100%;
     display: flex;
@@ -158,7 +212,7 @@ justify-content: work on x-axis by default
     align-items: flex-start;  
     justify-content: flex-start;
     flex-wrap: nowrap;
-}
+} */
 
 /* #child1 {
     height: 200px;
@@ -196,7 +250,7 @@ justify-content: work on x-axis by default
     border: 1px solid #fff;
 } */
 
-main{
+/* main{
     background: crimson;
     width: 100%;
     height: 2rem;
@@ -214,4 +268,227 @@ nav{
 nav a{
     text-decoration: none;
     color: #fff;
+} */
+
+/* ======================= CSS GRID — QUICK REVISION NOTES =======================
+
+1) Enable Grid
+   display: grid;            → turns an element into a grid container
+
+2) Define Structure
+   grid-template-columns     → defines columns
+   grid-template-rows        → defines rows
+   Example:
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-template-rows: auto 1fr 0.5fr;
+
+3) Fraction Unit (fr)
+   - fr = fraction of free space
+   - 1fr is double of 0.5fr
+   - Relative, not fixed
+
+4) Gaps
+   gap: 10px;                → space between rows & columns
+   row-gap / column-gap also exist
+
+5) Grid Areas (Layout Control)
+   grid-template-areas:
+     "header header header"
+     "sidebar content content"
+     "footer footer footer";
+
+   Assign using:
+   grid-area: header;
+
+   RULES:
+   - No commas allowed
+   - Same name = same area
+   - Rows must match defined layout
+
+6) Auto Placement
+   grid-auto-rows: minmax(100px, auto);
+
+7) Align Items (inside cells)
+   justify-items: start | center | end | stretch
+   align-items: start | center | end | stretch
+
+8) Align Grid (whole container)
+   justify-content: start | center | end | space-between
+   align-content: start | center | end | space-between
+
+9) Manual Item Placement
+   grid-column: 1 / 3;       → column start / end
+   grid-row: 2 / 4;          → row start / end
+
+10) repeat() (clean code)
+    grid-template-columns: repeat(3, 1fr);
+
+11) minmax() (responsive grids)
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+12) Grid vs Flex
+    Grid → 2D layout (rows + columns)
+    Flex → 1D layout (row OR column)
+
+================================================================================= */
+/* #parent {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+#child1 {
+    background: crimson;
+}
+
+#child2 {
+    background: coral;
+}
+
+#child3 {
+    background: skyblue;
+}
+
+#child4 {
+    background: lightseagreen;
+} */
+
+/* 
+.child{
+    height: 200px;
+    width: 200px;
+    border: 1px solid white;
+} 
+*/
+/* ======================= MEDIA QUERIES — QUICK REVISION NOTES =======================
+
+PURPOSE:
+Media queries make layouts responsive based on screen size, device, or conditions.
+
+BASIC SYNTAX:
+@media (condition) {
+ 
+}
+
+COMMON CONDITIONS:
+
+1) max-width (Desktop → Mobile approach)
+   @media (max-width: 768px)
+   - Applies styles when screen width is ≤ given value
+   - Most commonly used
+
+2) min-width (Mobile → Desktop approach)
+   @media (min-width: 768px)
+   - Applies styles when screen width is ≥ given value
+   - Used in mobile-first design
+
+MOBILE-FIRST (RECOMMENDED):
+- Write base CSS for mobile
+- Use min-width for larger screens
+
+Example:
+body { font-size: 14px; }
+
+@media (min-width: 768px) {
+  body { font-size: 16px; }
+}
+
+COMMON BREAKPOINTS (not fixed rules):
+- 320px  → small phones
+- 480px  → phones
+- 768px  → tablets
+- 1024px → laptops
+- 1280px+ → desktops
+
+ORIENTATION:
+@media (orientation: portrait)
+@media (orientation: landscape)
+
+COMBINING CONDITIONS:
+@media (min-width: 600px) and (max-width: 1024px)
+
+MEDIA TYPES:
+- screen → default (screens)
+- print  → for printing layouts
+
+IMPORTANT RULES:
+- Media queries DO NOT replace bad CSS
+- Layout first, then media queries
+- Use fewer breakpoints, not many
+
+MEDIA QUERY vs UNITS:
+- Use rem/em + media queries for best results
+- Avoid pixel-heavy layouts
+
+===================================================================================== 
+*/
+
+/* #box{
+    height: 200px;
+    width: 200px;
+    background-color: crimson;
+}
+
+@media (max-width: 600px) and (min-width: 500px){
+    #box{
+        height: 100px;
+        width: 100px ;
+        border-radius: 50%;
+        background: lightblue;
+    }
+}
+@media (max-width: 700px){
+    #box{
+        height: 200px;
+        width: 200px ;
+        border-radius: 50%;
+        background: lightblue;
+    }
+} */
+
+nav{
+    height: 4rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+}
+
+.nav .nav1{
+    height: 100%;
+}
+
+nav .nav1 img{
+    height: 35px;
+}
+
+nav .nav2{
+    display: flex;
+    height: 100%;
+    width: 50%;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+}
+
+nav .nav2 i{
+    font-size: 20px;
+    display: none;
+}
+
+@media (max-width: 600px){
+    nav{
+        background: darkcyan;
+    }
+
+    .nav2 h4{
+        display: none;
+    }
+
+    nav .nav2 i{
+    font-size: 20px;
+    display: inline-block;
+}
 }
