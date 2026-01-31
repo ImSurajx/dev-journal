@@ -448,7 +448,7 @@ MEDIA QUERY vs UNITS:
     }
 } */
 
-nav{
+/* nav{
     height: 4rem;
     width: 100%;
     display: flex;
@@ -491,4 +491,4 @@ nav .nav2 i{
     font-size: 20px;
     display: inline-block;
 }
-}
+} */

@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive</title>
-    <link rel="stylesheet" href="style.css">
+
+    <!-- Tailwind CDN (CORRECT) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Remix Icons -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
@@ -49,7 +53,7 @@
         <div class="child" id="child4"></div>
     </div> -->
     <!-- <div id="box"></div> -->
-    <nav>
+    <!-- <nav>
         <div class="nav1">
             <img src="https://dfdx9u0psdezh.cloudfront.net/logos/full-logo.webp" alt="">
         </div>
@@ -60,7 +64,98 @@
             <h4>Request Callback</h4>
             <i class="ri-menu-line"></i>
         </div>
-    </nav>
+    </nav> -->
+<!-- =================== TAILWIND CSS — QUICK REVISION NOTES ===================
+
+WHAT IS TAILWIND?
+Utility-first CSS framework
+→ write styles directly in HTML using classes
+→ no custom CSS for most layouts
+
+SETUP (CDN – for learning only)
+<script src="https://cdn.tailwindcss.com"></script>
+
+CORE IDEAS:
+- No predefined components
+- Small utility classes
+- Build UI by combining classes
+
+TEXT & FONT:
+text-sm / text-base / text-xl / text-5xl
+font-light / font-normal / font-semibold / font-bold
+text-center / text-left / text-right
+text-red-500 / text-black / text-white
+
+SPACING:
+p-4  → padding
+px-4 → padding x-axis
+py-2 → padding y-axis
+m-4  → margin
+mt-4 / mb-4 / ml-4 / mr-4
+
+LAYOUT:
+flex → display: flex
+grid → display: grid
+hidden / block / inline-block
+
+FLEX UTILITIES:
+flex-row / flex-col
+items-center → align-items
+justify-center → justify-content
+gap-4 → space between items
+
+GRID UTILITIES:
+grid-cols-3
+grid-rows-2
+col-span-2
+row-span-2
+gap-4
+
+SIZING:
+w-full / h-full
+w-screen / h-screen
+w-1/2 / h-1/2
+max-w-xl
+
+POSITION:
+relative / absolute / fixed
+top-0 / left-0 / right-0 / bottom-0
+top-1/2 left-1/2
+-translate-x-1/2 -translate-y-1/2
+
+BACKGROUND & BORDER:
+bg-red-500 / bg-black
+rounded / rounded-lg / rounded-full
+border / border-2
+border-white
+
+RESPONSIVE (Mobile First):
+sm: → ≥ 640px
+md: → ≥ 768px
+lg: → ≥ 1024px
+xl: → ≥ 1280px
+
+Example:
+class="text-sm md:text-base lg:text-xl"
+
+HOVER & STATE:
+hover:bg-red-500
+hover:text-white
+cursor-pointer
+
+IMPORTANT NOTES:
+- Order of classes does NOT matter
+- Responsive & hover classes override base styles
+- Avoid mixing Tailwind + heavy custom CSS
+
+CDN LIMITATION:
+- CDN → learning only
+- Real projects → use Vite / React / CLI setup
+
+========================================================================== -->
+    <h1 class="text-5xl absolute  whitespace-nowrap sm:text-5xl lg:text-8xl md:text-4xl">
+        Hello, I'm Suraj Kumar
+    </h1>
 </body>
 
 </html>
