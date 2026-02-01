@@ -1,0 +1,137 @@
+/* ======================= SCSS — QUICK REVISION NOTES =======================
+
+WHAT IS SCSS?
+- SCSS = CSS with superpowers
+- Needs compilation → SCSS → CSS
+- Browser cannot read .scss directly
+
+CORE FEATURES:
+
+1) VARIABLES
+   $primary-color: royalblue;
+   $spacing: 20px;
+
+2) NESTING
+   nav {
+     ul {
+       li {
+         a { color: white; }
+       }
+     }
+   }
+   // Avoid deep nesting (max 3 levels)
+
+3) PARTIALS
+   _buttons.scss
+   _variables.scss
+   // Files starting with _ are partials
+
+4) IMPORT / USE
+   @import "buttons";  // old (still works)
+   @use "buttons";    // modern & recommended
+
+5) MIXINS (REUSABLE STYLES)
+   @mixin flexCenter {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+   }
+
+   @include flexCenter;
+
+6) MIXINS WITH PARAMETERS
+   @mixin button($bg, $color, $size) {
+     background: $bg;
+     color: $color;
+     font-size: $size;
+   }
+
+7) FUNCTIONS
+   @function rem($px) {
+     @return ($px / 16) * 1rem;
+   }
+
+8) EXTEND (INHERITANCE)
+   %btnBase {
+     padding: 10px 20px;
+     border-radius: 5px;
+   }
+
+   .btn {
+     @extend %btnBase;
+   }
+
+9) OPERATORS
+   width: 100% - 20px;
+   font-size: 16px * 1.2;
+
+10) COMMENTS
+    // SCSS-only comment (not compiled)
+    /* CSS comment (compiled) */
+
+// COMPILATION:
+// sass style.scss style.css
+// sass --watch scss:css
+
+// BEST PRACTICES:
+// - Use variables for colors & spacing
+// - Prefer mixins over @extend
+// - Use @use instead of @import
+// - Keep SCSS modular & readable
+
+// SCSS vs CSS:
+// - SCSS adds logic & structure
+// - CSS is final output
+
+// ======================================================================== */
+@import "button";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+// help to avoid repeatation
+@mixin flexCenter(){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+// nesting
+main {
+    height: 100%;
+    width: 100%;
+    background-color: whitesmoke;
+    @include flexCenter();
+
+    section {
+        height: 50%;
+        width: 50%;
+        background: white;
+        @include flexCenter();
+        flex-direction: column;
+        h1 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 200;
+        }
+
+        .blue{
+            @include button-style(blue, white, 18px);
+            margin-top: 10px;
+        }
+
+        .red{
+            @include button-style(orange, white, 20px);
+            margin-top: 10px;
+        }
+    }
+}

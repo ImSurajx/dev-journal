@@ -1,0 +1,128 @@
+@charset "UTF-8";
+/* ======================= SCSS — QUICK REVISION NOTES =======================
+
+WHAT IS SCSS?
+- SCSS = CSS with superpowers
+- Needs compilation → SCSS → CSS
+- Browser cannot read .scss directly
+
+CORE FEATURES:
+
+1) VARIABLES
+   $primary-color: royalblue;
+   $spacing: 20px;
+
+2) NESTING
+   nav {
+     ul {
+       li {
+         a { color: white; }
+       }
+     }
+   }
+   // Avoid deep nesting (max 3 levels)
+
+3) PARTIALS
+   _buttons.scss
+   _variables.scss
+   // Files starting with _ are partials
+
+4) IMPORT / USE
+   @import "buttons";  // old (still works)
+   @use "buttons";    // modern & recommended
+
+5) MIXINS (REUSABLE STYLES)
+   @mixin flexCenter {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+   }
+
+   @include flexCenter;
+
+6) MIXINS WITH PARAMETERS
+   @mixin button($bg, $color, $size) {
+     background: $bg;
+     color: $color;
+     font-size: $size;
+   }
+
+7) FUNCTIONS
+   @function rem($px) {
+     @return ($px / 16) * 1rem;
+   }
+
+8) EXTEND (INHERITANCE)
+   %btnBase {
+     padding: 10px 20px;
+     border-radius: 5px;
+   }
+
+   .btn {
+     @extend %btnBase;
+   }
+
+9) OPERATORS
+   width: 100% - 20px;
+   font-size: 16px * 1.2;
+
+10) COMMENTS
+    // SCSS-only comment (not compiled)
+    /* CSS comment (compiled) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main section {
+  height: 50%;
+  width: 50%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main section h1 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 200;
+}
+main section .blue {
+  padding: 20px 30px;
+  background: blue;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 7px;
+  outline: none;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 10px;
+}
+main section .red {
+  padding: 20px 30px;
+  background: orange;
+  color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 7px;
+  outline: none;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 10px;
+}/*# sourceMappingURL=style.css.map */
