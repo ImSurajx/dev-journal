@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 200;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background: #222;
+    color: #fff;
+}
+
+/*
+absolute unit: fixed values
+px, pt, cm, mm, in
+
+relative units: depends on someone
+em, rem, %, vw, vh, vmin, vmax, ch, eh
+
+clamp(lowerLimit, value, upperLimit).
+
+html, body, section, main, footer, aside -> fontsize: 16px
+*/
+
+.red {
+    height: 300px;
+    width: 50vw;
+    background: crimson;
+
+    h1 {
+        font-size: 2rem; // 1rem = 16px -> depends on html/root element.
+    }
+}
+
+main {
+    height: 100%;
+    width: 100%;
+    font-size: 5rem;
+
+    h2 {
+        font-size: 1em;
+    }
+
+    section {
+        font-size: 40px; // em depends on section, if section isn't existed then it depends on main.
+
+        h1 {
+            font-size: 1em; //  1em = 16px by default, but it's depends on nearest ancistor like here it's depends on section.
+        }
+    }
+
+    .red {
+        height: 500px;
+        width: 500px;
+        background: coral;
+
+        .blue {
+            height: 50%;
+            width: 50%;
+            background: crimson;
+        }
+    }
+}
+
+html {
+    font-size: clamp(14px, 1vw, 18px);
+}
+
+h1 {
+    font-size: 10rem;
+}

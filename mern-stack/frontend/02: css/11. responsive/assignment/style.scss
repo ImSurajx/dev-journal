@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background: #333;
+}
+
+@mixin imageFit() {
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+}
+
+main {
+    height: 100%;
+    width: 100%;
+    padding: 2rem;
+
+    section {
+        height: 100%;
+        width: 100%;
+        border: 1px solid #fff;
+        border-radius: 8px;
+        padding: 1rem;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr;
+        grid-template-rows: 1.5fr 1fr;
+        grid-template-areas:
+            "img-one img-two img-two img-two"
+            "img-one img-three img-four img-five"
+        ;
+        gap: 2rem;
+
+        #img-one {
+            border-radius: 5px;
+            overflow: hidden;
+            grid-area: img-one;
+
+            img {
+                @include imageFit();
+            }
+        }
+
+        #img-two {
+            border-radius: 5px;
+            overflow: hidden;
+            grid-area: img-two;
+
+            img {
+                @include imageFit();
+            }
+        }
+
+        #img-three {
+            border-radius: 5px;
+            overflow: hidden;
+            grid-area: img-three;
+
+            img {
+                @include imageFit();
+            }
+        }
+
+        #img-four {
+            border-radius: 5px;
+            overflow: hidden;
+            grid-area: img-four;
+
+            img {
+                @include imageFit();
+            }
+        }
+
+        #img-five {
+            border-radius: 5px;
+            overflow: hidden;
+            grid-area: img-five;
+
+            img {
+                @include imageFit();
+            }
+        }
+    }
+}

@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 200;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background: #222;
+  color: #fff;
+}
+
+/*
+absolute unit: fixed values
+px, pt, cm, mm, in
+
+relative units: depends on someone
+em, rem, %, vw, vh, vmin, vmax, ch, eh
+
+clamp(lowerLimit, value, upperLimit).
+
+html, body, section, main, footer, aside -> fontsize: 16px
+*/
+.red {
+  height: 300px;
+  width: 50vw;
+  background: crimson;
+}
+.red h1 {
+  font-size: 2rem;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  font-size: 5rem;
+}
+main h2 {
+  font-size: 1em;
+}
+main section {
+  font-size: 40px;
+}
+main section h1 {
+  font-size: 1em;
+}
+main .red {
+  height: 500px;
+  width: 500px;
+  background: coral;
+}
+main .red .blue {
+  height: 50%;
+  width: 50%;
+  background: crimson;
+}
+
+html {
+  font-size: clamp(14px, 1vw, 18px);
+}
+
+h1 {
+  font-size: 10rem;
+}/*# sourceMappingURL=style.css.map */
