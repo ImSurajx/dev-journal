@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 200;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background: #000;
+  color: #fff;
+  font-size: cl;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+main section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+}
+main section .top {
+  width: 100%;
+}
+main section .top img {
+  width: 100%;
+  border-radius: 10px;
+}
+main section .bottom {
+  background: #444;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 10px;
+  gap: 2rem;
+}
+main section .bottom .text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+main section .bottom .text h1 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+main section .bottom .text p {
+  font-weight: 100;
+  font-size: 1.3rem;
+  opacity: 0.6;
+  line-height: 1.5;
+}
+main section .bottom .text button {
+  width: -moz-fit-content;
+  width: fit-content;
+  border: none;
+  outline: none;
+  padding: 0.7rem 1rem;
+  border-radius: 0.5rem;
+}
+
+@media (min-width: 900px) {
+  main section {
+    flex-direction: row;
+    padding: 3rem;
+  }
+  main section .top {
+    width: 50%;
+  }
+  main section .bottom {
+    width: 50%;
+    justify-content: space-between;
+  }
+  main section .bottom h1 {
+    font-size: 4rem;
+  }
+  main section .bottom p {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 3800px) {
+  main {
+    align-items: center;
+  }
+  main section {
+    max-width: 2500px;
+  }
+}/*# sourceMappingURL=style.css.map */

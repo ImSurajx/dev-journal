@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 200;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background: #000;
+    color: #fff;
+    font-size: clamp(14px 1vw 18px);
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    section {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+        max-width: 1900px;
+
+        .top {
+            width: 100%;
+
+            img {
+                width: 100%;
+                border-radius: 10px;
+            }
+        }
+
+        .bottom {
+            background: #444;
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+            border-radius: 10px;
+            gap: 2rem;
+
+            .text {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+
+                h1 {
+                    font-size: 2.5rem;
+                    text-transform: uppercase;
+                }
+
+                p {
+                    font-weight: 100;
+                    font-size: 1.3rem;
+                    opacity: 0.6;
+                    line-height: 1.5;
+                }
+
+                button {
+                    width: fit-content;
+                    border: none;
+                    outline: none;
+                    padding: 0.7rem 1rem;
+                    border-radius: 0.5rem;
+                }
+            }
+        }
+
+    }
+}
+
+@media (min-width: 900px) {
+    main {
+
+        section {
+            flex-direction: row;
+            padding: 3rem;
+
+            .top {
+                width: 50%;
+            }
+
+            .bottom {
+                width: 50%;
+                justify-content: space-between;
+
+                h1 {
+                    font-size: 4rem;
+                }
+
+                p {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+
