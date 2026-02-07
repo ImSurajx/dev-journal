@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background: whitesmoke;
+}
+
+main {
+  width: 100%;
+}
+main .notification {
+  width: 100%;
+  background: linear-gradient(124.64deg, #027dfd, #833ef2);
+  color: #fff;
+  padding: 1rem 0 1rem 0;
+  text-align: center;
+  position: fixed;
+  top: 0;
+}
+main .notification h4 {
+  font-weight: 400;
+}
+main nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: white;
+  width: 100%;
+  position: fixed;
+  top: 3.3rem;
+}
+main nav .logo {
+  width: 8rem;
+}
+main nav .logo img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+main nav .menu-1200px {
+  display: none;
+}
+main nav .menu-600px i {
+  font-size: 1.2rem;
+}
+main .sec-one {
+  width: 100%;
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  padding: 8rem 2rem;
+  background: linear-gradient(35deg, #fcdde8, #f3fcff 60%);
+  text-align: center;
+  gap: 4rem;
+}
+main .sec-one .top {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 4rem;
+}
+main .sec-one .top h1 {
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+main .sec-one .top .img {
+  width: 100%;
+}
+main .sec-one .top .img img {
+  width: 100%;
+}
+main .sec-one .bottom .info h2 {
+  font-weight: 300;
+  font-size: 1.8rem;
+}
+
+@media (min-width: 900px) {
+  main {
+    max-width: 1900px;
+  }
+  main nav .menu-1200px {
+    display: flex;
+    width: 55%;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  main nav .menu-1200px a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #555;
+    font-size: 0.85rem;
+    cursor: pointer;
+  }
+  main nav .menu-1200px a i {
+    font-size: 1.2rem;
+  }
+  main nav .menu-1200px a:hover {
+    color: royalblue;
+  }
+  main nav .menu-1200px .blue {
+    color: royalblue;
+  }
+  main nav .menu-1200px .btn-fill {
+    outline: none;
+    border: none;
+    background: royalblue;
+    color: #fff;
+    padding: 0.5rem 2rem;
+    border-radius: 50px;
+    font-weight: 500;
+  }
+  main nav .menu-600px {
+    display: none;
+  }
+  main .sec-one {
+    justify-content: center;
+  }
+  main .sec-one .top {
+    flex-direction: row;
+    justify-content: center;
+  }
+  main .sec-one .top .title {
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    padding: 1rem;
+  }
+  main .sec-one .top .title h1 {
+    font-size: 4rem;
+  }
+  main .sec-one .top .img {
+    width: 35%;
+  }
+  main .sec-one .top .img img {
+    width: 100%;
+  }
+  main .sec-one .bottom {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  main .sec-one .bottom .info {
+    width: 60%;
+  }
+}/*# sourceMappingURL=style.css.map */
