@@ -163,6 +163,16 @@ main .sec-three .bottom .buttons .text-btn {
   font-weight: bold;
   margin-left: 2rem;
 }
+main .sec-four {
+  background: linear-gradient(35deg, #fcfce2 40%, #f5fbfe 90%);
+}
+main .sec-four .bottom .first h1 {
+  font-size: 2.5rem;
+}
+main .sec-four .bottom .buttons .outline {
+  color: #fff;
+  background: royalblue;
+}
 
 @media (min-width: 900px) {
   main {
@@ -267,5 +277,8 @@ main .sec-three .bottom .buttons .text-btn {
   main .sec-three .bottom .buttons .text-btn {
     flex-shrink: 1;
     white-space: nowrap;
+  }
+  main .sec-four {
+    flex-direction: row;
   }
 }/*# sourceMappingURL=style.css.map */
