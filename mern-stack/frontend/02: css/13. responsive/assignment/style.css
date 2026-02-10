@@ -23,6 +23,9 @@ main .notification {
   padding: 1rem 0 1rem 0;
   text-align: center;
   position: fixed;
+  display: flex;
+  justify-content: center;
+  z-index: 999;
   top: 0;
 }
 main .notification h4 {
@@ -37,6 +40,7 @@ main nav {
   width: 100%;
   position: fixed;
   top: 3.3rem;
+  z-index: 999;
 }
 main nav .logo {
   width: 8rem;
@@ -173,6 +177,142 @@ main .sec-four .bottom .buttons .outline {
   color: #fff;
   background: royalblue;
 }
+main .sec-sev {
+  width: 100%;
+  padding: 3rem;
+}
+main .sec-sev .box {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  padding: 2.5rem 1rem;
+  border-radius: 50px;
+  background: #042449;
+  position: relative;
+}
+main .sec-sev .box .text {
+  color: #fff;
+  z-index: 3;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+main .sec-sev .box .text h1 {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+main .sec-sev .box .text p {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+main .sec-sev .box .text .buttons {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+main .sec-sev .box .text .buttons .fill-btn {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.6rem 2rem;
+  border-radius: 50px;
+  background: #fff;
+  color: #000;
+  font-weight: 400;
+}
+main .sec-sev .box .text .buttons .text-btn {
+  font-weight: 400;
+  margin-left: 2rem;
+}
+main .sec-sev .box .media {
+  z-index: 1;
+  max-width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+main .sec-sev .box .media img {
+  z-index: 1;
+  max-width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+main footer {
+  width: 100%;
+  background: whitesmoke;
+  padding: 2rem;
+  padding-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+main footer .logo {
+  margin-left: 1rem;
+  width: 8rem;
+}
+main footer .logo img {
+  width: 100%;
+}
+main footer .menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+}
+main footer .menu .links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+main footer .menu .links h2 {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+main footer .menu .links a {
+  font-size: 1rem;
+  text-decoration: none;
+  color: #000;
+  font-weight: 300;
+}
+main footer .icons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+main footer .icons i {
+  font-size: 1.5rem;
+}
+main footer hr {
+  height: 0.1rem;
+  border: none;
+  width: 100%;
+  background-color: grey;
+}
+main footer .text-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+main footer .text-container .text {
+  text-align: center;
+  flex-shrink: 1;
+  font-weight: 300;
+}
+main footer .text-container .pages {
+  display: flex;
+  gap: 1rem;
+  flex-shrink: 1;
+  justify-content: center;
+}
+main footer .text-container .pages p {
+  font-weight: 300;
+}
 
 @media (min-width: 900px) {
   main {
@@ -280,5 +420,25 @@ main .sec-four .bottom .buttons .outline {
   }
   main .sec-four {
     flex-direction: row;
+  }
+  main .sec-sev .box .text .buttons {
+    flex-direction: row;
+    align-items: center;
+  }
+  main footer .menu {
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 5rem;
+  }
+  main footer .icons {
+    justify-content: flex-start;
+    margin-left: 1rem;
+  }
+  main footer .text-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  main footer .text-container .text {
+    text-align: left;
   }
 }/*# sourceMappingURL=style.css.map */
