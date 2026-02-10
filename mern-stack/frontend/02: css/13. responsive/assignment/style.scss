@@ -104,7 +104,7 @@ main {
     }
 
     // section two
-    .sec-two{
+    .sec-two {
         margin-top: 3rem;
         display: flex;
         flex-direction: column;
@@ -112,29 +112,92 @@ main {
         gap: 3rem;
         padding: 2rem;
         background: #fff;
-        .card{
+
+        .card {
             width: 100%;
-            hr{
+
+            hr {
                 height: 0.3rem;
                 outline: none;
                 border: none;
                 background: whitesmoke;
             }
-            .top{
+
+            .top {
                 margin: 1rem 0;
-                h1{
+
+                h1 {
                     font-weight: 400;
                     margin-bottom: 1rem;
                 }
-                p{
+
+                p {
                     text-align: justify;
                     font-weight: 300;
                 }
             }
-            .btm{
+
+            .btm {
                 width: 100%;
-                img{
+
+                img {
                     width: 100%;
+                }
+            }
+        }
+    }
+
+    // section three
+    .sec-three {
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 3rem;
+        padding: 2rem;
+        background: #fff;
+
+        .top {
+            width: 100%;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .bottom {
+            .first {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+
+                p {
+                    font-weight: 300;
+                }
+
+                h1 {
+                    font-weight: 500;
+                }
+            }
+
+            .buttons {
+                margin-top: 1rem;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                .outline {
+                    border: 2px solid royalblue;
+                    width: fit-content;
+                    padding: 0.6rem 2rem;
+                    border-radius: 50px;
+                    color: royalblue;
+                    font-weight: 400;
+                }
+
+                .text-btn {
+                    font-weight: bold;
+                    margin-left: 2rem;
                 }
             }
         }
@@ -144,6 +207,7 @@ main {
 @media (min-width:900px) {
     main {
         max-width: 1900px;
+
         nav {
             .menu-1200px {
                 display: flex;
@@ -227,12 +291,43 @@ main {
             }
         }
 
-        .sec-two{
+        .sec-two {
             flex-direction: row;
             padding: 5rem;
             margin-top: 0;
-            .card{
+
+            .card {
                 flex-shrink: 1;
+            }
+        }
+
+        .sec-three {
+            padding: 5rem;
+            margin-top: 0;
+            flex-direction: row-reverse;
+
+            .top {
+                padding: 3rem;
+            }
+
+            .bottom {
+                width: 70%;
+                display: flex;
+                align-items: center;
+
+                .buttons{
+                    flex-direction: row;
+                    gap: 1rem;
+                    align-items: center;
+                    .outline{
+                        flex-shrink: 1;
+                        white-space: nowrap;
+                    }
+                    .text-btn{
+                        flex-shrink: 1;
+                        white-space: nowrap;
+                    }
+                }
             }
         }
     }

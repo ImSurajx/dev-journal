@@ -118,6 +118,51 @@ main .sec-two .card .btm {
 main .sec-two .card .btm img {
   width: 100%;
 }
+main .sec-three {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 3rem;
+  padding: 2rem;
+  background: #fff;
+}
+main .sec-three .top {
+  width: 100%;
+}
+main .sec-three .top img {
+  width: 100%;
+}
+main .sec-three .bottom .first {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+main .sec-three .bottom .first p {
+  font-weight: 300;
+}
+main .sec-three .bottom .first h1 {
+  font-weight: 500;
+}
+main .sec-three .bottom .buttons {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+main .sec-three .bottom .buttons .outline {
+  border: 2px solid royalblue;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.6rem 2rem;
+  border-radius: 50px;
+  color: royalblue;
+  font-weight: 400;
+}
+main .sec-three .bottom .buttons .text-btn {
+  font-weight: bold;
+  margin-left: 2rem;
+}
 
 @media (min-width: 900px) {
   main {
@@ -196,5 +241,31 @@ main .sec-two .card .btm img {
   }
   main .sec-two .card {
     flex-shrink: 1;
+  }
+  main .sec-three {
+    padding: 5rem;
+    margin-top: 0;
+    flex-direction: row-reverse;
+  }
+  main .sec-three .top {
+    padding: 3rem;
+  }
+  main .sec-three .bottom {
+    width: 70%;
+    display: flex;
+    align-items: center;
+  }
+  main .sec-three .bottom .buttons {
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+  }
+  main .sec-three .bottom .buttons .outline {
+    flex-shrink: 1;
+    white-space: nowrap;
+  }
+  main .sec-three .bottom .buttons .text-btn {
+    flex-shrink: 1;
+    white-space: nowrap;
   }
 }/*# sourceMappingURL=style.css.map */
