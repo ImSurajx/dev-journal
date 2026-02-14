@@ -119,18 +119,115 @@ function akc() {
 }
 
 // iife: call at declartion
-(function(){
+(function () {
     console.log("Hello, How are You?");
 })();
 
 // hoisting: it work only js for function statements
 xhc();
-function xhc(){
+function xhc() {
     console.log("Hello");
-    
+
 }
 mhg(); // can't access before initilization because it's function expression
-let mhg = function akpc(){
+let mhg = function akpc() {
     console.log("Cool");
-    
+
 }
+
+// ques: use rest parameter to accpept any number of scores and return the total
+function getScore(...val) {
+    let total = 0;
+    for (let i = 0; i < val.length; i++) {
+        total += val[i];
+    }
+    return total;
+}
+console.log(getScore(1, 2, 3, 4, 5, 6, 7, 8, 9));
+
+// ques: pass a function into antoher function and execute it inside;
+function abc(val) {
+    val();
+}
+
+abc(function () {
+    console.log("Hello Suraj");
+});
+
+// ques: what is a closure? when is it created.
+function abcd() {
+    let val = 0;
+    return function () {
+        console.log(val); // when a function is return a function & using parent function variable
+    };
+}
+
+function outer() {
+    let count = 0;
+    return function () {
+        count++;
+        console.log(count);
+    }
+}
+const counter = outer();
+counter(); // 1
+counter(); // 2
+
+// ques: convert a function into iife
+let shery = (function () {
+    let score = 0;
+    return {
+        getScore: function () {
+            console.log(score);
+        },
+        setScore: function (val) {
+            score = val;
+        },
+    };
+})();
+shery.setScore = 99;
+
+// ques: write a bmi calulator
+function bmi(weight, height) {
+    return weight / (height * height) * 10;
+}
+console.log(bmi(74, 5.6).toFixed(2));
+
+// ques: create a reusable discount calculator using closure
+function discountCalculator(discount) {
+    return function (price) {
+        return price - price * (discount / 100);
+    }
+}
+let discount10 = discountCalculator(10);
+let discount20 = discountCalculator(20);
+let discount30 = discountCalculator(30);
+console.log(discount10(1200));
+console.log(discount20(1200));
+console.log(discount30(1200));
+
+// ques: build a counter using cloure.
+function holdCounter() {
+    let count = 0;
+    return function () {
+        count++;
+        return count;
+    }
+}
+let counterA = holdCounter();
+console.log(counterA());
+console.log(counterA());
+console.log(counterA());
+
+// ques: create a pure function to transform a value;
+function triple(val) {
+    return val * val * val;
+}
+console.log(triple(5));
+
+// create a iffe to isolate variable.
+(function () {
+    const pass = "sec pass";
+    console.log(pass);
+})();
+console.log(pass);
