@@ -199,15 +199,77 @@ let allContries = ["india", ...countries];
 console.log(allContries);
 
 
+// ques: create an array of student names and print each
+let students = ["suraj", "jatin", "ritesh", "govind", "dushyant", "jitanshu", "vivek"];
+students.forEach(function (name) {
+    return console.log(name);
+});
 
+// ques: filter even numbers from an array
+let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+let evenNum = nums.filter(function (val) {
+    return val % 2 == 0;
+});
+console.log(evenNum);
 
+// ques: map prices to include GST (18%)
+let productPrice = [1000, 500, 2000, 400, 200, 2500];
+let priceWithGST = productPrice.map(function (val) {
+    return val += val * (18 / 100);
+});
+console.log(priceWithGST);
 
+// ques: reduce salaries to calculate total payroll
+let salaries = [30000, 45000, 25000, 50000];
+let payroll = salaries.reduce(function (acc, val) {
+    return acc + val;
+}, 0);
+console.log(payroll);
 
+// ques: find the first student with grade a
+let marks = [78, 82, 91, 69, 74, 88, 95];
+let gradeA = marks.find(function (val) {
+    return val > 90;
+});
+console.log(gradeA);
 
+// ques: write a function to reverse an array
+let arr = [1, 2, 3, 4, 5, 6];
+function reverseArray(arr) {
+    i = 0;
+    j = arr.length - 1;
+    while (i < j) {
+        let temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+        i++;
+        j--;
+    }
+}
+reverseArray(arr);
+console.log(arr);
 
+// ques: sort array of ages in ascending order
+let ages = [18, 21, 25, 30, 17, 40];
+ages.sort(function (a, b) {
+    return a - b;
+});
+console.log(ages);
 
+// ques: destructure first two elements of an array
+let [a, b] = [...arr];
+console.log(a);
+console.log(b);
 
+// ques: use some() to check if any student failed
+let isFailed = marks.some(function (val) {
+    return val < 35;
+})
+console.log(isFailed);
 
-
-
-
+// ques: use spread to copy and add new item..
+let copyMarks = [...marks];
+console.log(copyMarks);
+copyMarks.push(10);
+console.log(copyMarks);
+console.log(marks);

@@ -175,6 +175,84 @@ const obj1 = {
 let objcloned = JSON.parse(JSON.stringify(obj1));
 console.log(objcloned);
 
+// ques: create an object for a book (title, author, price)
+let book = {
+    title: "learn everything",
+    author: "suraj kumar",
+    price: "999",
+}
+
+// ques: access properties using both dot and bracket
+console.log(book.title);
+console.log(book['title']);
+
+// ques: write a nested object (user with address and location)
+const user = {
+    id: 101,
+    name: "Suraj Kumar",
+    age: 21,
+    email: "surajxcode@gmail.com",
+    isActive: true,
+    skills: ["HTML", "CSS", "JavaScript", "C++"],
+    address: {
+        city: "Delhi",
+        country: "India"
+    }
+};
+
+// ques: destructure name and age from a student object
+const student = {
+    id: 1,
+    name: "Suraj Kumar",
+    age: 21,
+    course: "BCA",
+    semester: 6,
+    marks: {
+        math: 85,
+        programming: 92,
+        dbms: 88
+    },
+    skills: ["C++", "JavaScript", "HTML", "CSS"],
+    isEnrolled: true
+};
+
+let name = student?.name;
+let age = student?.age;
+console.log(name);
+console.log(age);
+
+// ques: loop through keys and values of an object
+for (let key in student) {
+    console.log(key, ' : ', student[key]);
+}
+
+// ques: convert object to array using Object.entries()
+let entries = Object.entries(student); // array of arrays
+console.log(entries);
+
+// ques: copy an object using spread operator
+let copystudent = { ...student };
+console.log(copystudent);
+
+// ques: create a deep copy of an object with nested structure.
+let deepCopyStudent = JSON.stringify(student);
+deepCopyStudent = JSON.parse(deepCopyStudent);
+console.log(deepCopyStudent);
+
+// ques: use optional chaining to safely access deep values.
+console.log(student?.marks?.math);
+
+// ques: use a variable as a key using computed properties.
+let key = "admin";
+let admin = {
+    [key]: "suraj kumar",
+    age: "21",
+}
+console.log(admin);
+
+
+
+
 
 
 
