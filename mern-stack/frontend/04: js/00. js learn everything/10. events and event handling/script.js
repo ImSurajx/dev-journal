@@ -92,3 +92,89 @@ form.addEventListener("submit", function (event) {
         }
     })
 })
+
+let mouseEffect = document.querySelector('#mouse-effect');
+mouseEffect.addEventListener("mouseover", function (data) {
+    mouseEffect.style.backgroundColor = "coral";
+})
+mouseEffect.addEventListener("mouseout", function (data) {
+    mouseEffect.style.backgroundColor = "royalblue";
+})
+
+window.addEventListener("mousemove", function(data){
+    mouseEffect.style.top = `${data.clientY}px`;
+    mouseEffect.style.left = `${data.clientX}px`;
+})
+
+let abcd = document.querySelector("#abcd");
+abcd.addEventListener("click", function(e){
+    console.log(e);
+})
+
+let form = document.querySelector("form");
+form.addEventListener("click", function(e){
+    e.preventDefault();
+})
+
+event bubbling: when listner is not present on element, then event will jump to the parent & while doing this event will move upward till the listner is found., child to parent
+document.querySelector("#nav").addEventListener("click", function(event){
+    alert("it clicked");
+});
+
+document.querySelector("ul").addEventListener("click", function(e){
+    e.target.classList.toggle("line-through");
+})
+let a = document.querySelector('.a');
+let b = document.querySelector('.b');
+let c = document.querySelector('.c');
+let btn = document.querySelector('button');
+btn.addEventListener("click", function (el) {
+    console.log("button clicked");
+})
+c.addEventListener("click", function (el) {
+    console.log("c clicked");
+})
+b.addEventListener("click", function (el) {
+    console.log("b clicked");
+})
+a.addEventListener("click", function (el) {
+    console.log("a clicked");
+})
+
+event capturing : event move toward parent to child, -> enable using true, ("evt", function(e){}, true)
+when we raise a event, the flow of event will be in two direction
+phase 1: event raised from top to bottom raised event
+phase 2: event raised from bottom to top raised event
+phase 1: always happen first but by default it is off if we on it then the response we will get is of the phase 1..
+a = document.querySelector('.a');
+b = document.querySelector('.b');
+c = document.querySelector('.c');
+btn = document.querySelector('button');
+btn.addEventListener("click", function (el) {
+    console.log("button clicked");
+}, true
+)
+c.addEventListener("click", function (el) {
+    console.log("c clicked");
+}, true
+)
+b.addEventListener("click", function (el) {
+    console.log("b clicked");
+}, true
+)
+a.addEventListener("click", function (el) {
+    console.log("a clicked");
+}, true
+)
+
+let inputField = document.querySelector('input');
+let span = document.querySelector('span');
+inputField.addEventListener("input", function () {
+    let left = 20 - inputField.value.length;
+    span.textContent = left;
+    if (left < 0) {
+        span.style.color = "red";
+    } else {
+        span.style.color = "black";
+    }
+})

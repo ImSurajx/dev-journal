@@ -10,7 +10,9 @@ html,
 body {
     height: 100%;
     width: 100%;
-    display: flex;
+    // display: flex;
+    // overflow: hidden;
+    // position: relative;
 }
 
 #main {
@@ -77,6 +79,45 @@ form {
             border-radius: 50%;
             object-fit: cover;
             object-position: center;
+        }
+    }
+}
+
+#mouse-effect {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+    margin: 5px 0 0 5px;
+    transition: cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+    cursor: pointer;
+}
+
+#abcd {
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+    margin: 5px 0 0 5px;
+    cursor: pointer;
+}
+
+.line-through{
+    text-decoration: line-through;
+}
+
+.a{
+    height: 80%;
+    width: 80%;
+    background: coral;
+    .b{
+        height: 80%;
+        width: 80%;
+        background: royalblue;
+        .c{
+            height: 80%;
+            width: 80%;
+            background: crimson;
         }
     }
 }
