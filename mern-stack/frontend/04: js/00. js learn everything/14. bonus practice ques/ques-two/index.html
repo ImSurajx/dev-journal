@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Note Card Stack</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>New Call</h2>
+        <form id="noteForm">
+
+            <label for="imageUrl">Image URL</label>
+            <input id="imageUrl" name="imageUrl" required type="text" placeholder="https://example.com/photo.jpg" />
+
+            <label for="fullName">Full Name</label>
+            <input id="fullName" name="fullName" required type="text" placeholder="Enter full name" />
+
+            <label for="homeTown">Home Town</label>
+            <input id="homeTown" name="homeTown" required type="text" placeholder="Enter home town" />
+
+            <label for="purpose">Purpose</label>
+            <input id="purpose" name="purpose" required type="text" placeholder="e.g., Quick appointment note" />
+
+            <label>Category</label>
+
+            <label class="tag-checkbox">
+                <input required type="radio" name="category" value="emergency" />
+                <span>Emergency</span>
+            </label>
+
+            <label class="tag-checkbox">
+                <input required type="radio" name="category" value="important" />
+                <span>Important</span>
+            </label>
+
+            <label class="tag-checkbox">
+                <input required type="radio" name="category" value="urgent" />
+                <span>Urgent</span>
+            </label>
+
+            <label class="tag-checkbox">
+                <input required type="radio" name="category" value="no-rush" />
+                <span>No Rush</span>
+            </label>
+
+            <button type="submit" class="submit-btn">
+                Create Note
+            </button>
+
+        </form>
+        <button class="closeForm">close</button>
+    </div>
+    <div class="note-container">
+        <div class="left-icons">
+            <button id="add-note"><i class="ri-add-line"></i></button>
+            <button id="upBtn"><i class="ri-arrow-up-line"></i></button>
+            <button id="downBtn"><i class="ri-arrow-down-line"></i></button>
+        </div>
+
+        <div class="stack">
+            <!-- <div class="card">
+
+                <img src="TASK_IMAGE_URL_HERE" alt="profile" class="avatar" />
+
+                <h2>TASK_FULL_NAME_HERE</h2>
+
+                <div class="info">
+                    <span>Home town</span>
+                    <span>TASK_HOME_TOWN_HERE</span>
+                </div>
+
+                <div class="info">
+                    <span>Purpose</span>
+                    <span>TASK_PURPOSE_HERE</span>
+                </div>
+
+                <div class="buttons">
+                    <div class="call">
+                        <i class="ri-phone-line"></i> Call
+                    </div>
+                    <div class="message">
+                        <i class="ri-message-line"></i>
+                        Message
+                    </div>
+                </div>
+
+            </div> -->
+        </div>
+
+        <div class="right-colors">
+            <span class="dot black"></span>
+            <span class="dot purple"></span>
+            <span class="dot orange"></span>
+            <span class="dot teal"></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
