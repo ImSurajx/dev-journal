@@ -1,28 +1,3 @@
-// create new card, save data into local storage
-// show cards from local storage
-// handle button
-// handle filtter
-
-/*
-- set listner on upButton
-    -> use stack & check it's latest elements
-    -> a, b, c
-    - extract lastChild..
-    - check is there any lastChild then insert it before firstChild
-    - update
-- set listner on downButton
-    - extract firstChild
-    - check is any firstChild then insert it after lastChild
-    - update
-
-- updatin: create a function updateStack(){}
-    - select all stack & card
-    - loop on that form 0 to 3
-        - card.style.zIndex = 3 - index
-        - card.style.transform = `translateY(${index * 10} scale(${1-index*0.02}))`;
-        - card.style.opacity = ${index * 10} scale(${1-index*0.02};
-*/
-
 // SELECT ELEMENTS
 let addNote = document.querySelector("#add-note");
 let formContainer = document.querySelector(".form-container");
@@ -32,41 +7,20 @@ const { imageUrl, fullName, homeTown, purpose, category } = form.elements;
 let textField = [imageUrl, fullName, homeTown, purpose, category];
 const stack = document.querySelector('.stack');
 const upBtn = document.querySelector("#upBtn");
-const downBtn = document.querySelector("#upBtn");
+const downBtn = document.querySelector("#downBtn");
 
 
+// load saved cards by default
+document.addEventListener("DOMContentLoaded", function () {
+    let tasks = localStorage.getItem("tasks");
 
+    if (!tasks) return;
 
-addNote.addEventListener("click", function () {
-    formContainer.style.display = "initial";
-    closeForm.addEventListener("click", function () {
-        formContainer.style.display = "none";
-    })
-});
+    tasks = JSON.parse(tasks);
 
-form.addEventListener("submit", function (evt) {
-    evt.preventDefault();
-    for (let field of textField) {
-        if (field.value.trim() == "") {
-            alert(`Enter ${field.name}`);
-            return;
-        }
-    }
-    let selectCategory = form.querySelector('input[name="category"]:checked');
-    if (!selectCategory) {
-        alert("Select a category");
-        return;
-    }
-    saveToLocal({
-        "imageUrl": imageUrl.value,
-        "fullName": fullName.value,
-        "homeTown": homeTown.value,
-        "purpose": purpose.value,
-        "category": selectCategory.value,
+    tasks.forEach(task => {
+        showCards(task);
     });
-    showCards();
-    formContainer.style.display = "none";
-    form.reset();
 });
 
 function saveToLocal(obj) {
@@ -154,7 +108,7 @@ function showCards() {
         const callBtn = document.createElement("div");
         callBtn.classList.add("call");
         callBtn.innerHTML = '<i class="ri-phone-line"></i> Call';
-        
+
         // Message button
         const msgBtn = document.createElement("div");
         callBtn.innerHTML = '<i class="ri-message-line"></i> Message';
@@ -173,7 +127,47 @@ function showCards() {
 
 }
 
-upBtn.addEventListener("click", function(){
-    
-})
+addNote.addEventListener("click", function () {
+    formContainer.style.display = "initial";
+    closeForm.addEventListener("click", function () {
+        formContainer.style.display = "none";
+    })
+});
 
+
+form.addEventListener("submit", function (evt) {
+    evt.preventDefault();
+    for (let field of textField) {
+        if (field.value.trim() == "") {
+            alert(`Enter ${field.name}`);
+            return;
+        }
+    }
+    let selectCategory = form.querySelector('input[name="category"]:checked');
+    if (!selectCategory) {
+        alert("Select a category");
+        return;
+    }
+    saveToLocal({
+        "imageUrl": imageUrl.value,
+        "fullName": fullName.value,
+        "homeTown": homeTown.value,
+        "purpose": purpose.value,
+        "category": selectCategory.value,
+    });
+    showCards();
+    formContainer.style.display = "none";
+    form.reset();
+});
+
+
+upBtn.addEventListener("click", function () {
+    if (stack.firstChild) {
+        stack.insertBefore(stack.firstChild, stack.lastChild);
+    } 
+})
+downBtn.addEventListener("click", function () {
+    if (stack.lastChild) {
+        stack.insertBefore(stack.lastChild, stack.firstChild);
+    }
+})
