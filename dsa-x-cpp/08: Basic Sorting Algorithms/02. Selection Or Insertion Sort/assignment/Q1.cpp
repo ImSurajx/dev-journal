@@ -1,0 +1,7 @@
+/*
+1. Which of the following is true about selection sort:
+a) In each iteration we find the minimum element in the unsorted part of the array. -> false
+b) In each iteration we find the index of the minimum element in the unsorted part of the array. -> true
+c) We swap the index of the minimum element with the first element of the array. -> not with first element but the first element of unsorted array.
+d) It takes O(n^2) swaps. -> false
+*/
