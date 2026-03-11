@@ -163,3 +163,221 @@ let newCheckThis = checkThis.bind(this)
 // for this keyword everything depends on how the function is called.
 // normal functions get their this from the call-site (the object before the dot).
 // arrow functions do not have their own this, they inherit it from their lexical parent scope.
+
+// Topic: Constructor Functions
+
+// Concept: constructor functions are used to create multiple objects with the same structure.
+// using the new keyword JavaScript creates a new object and binds this to that object,
+// so we can assign properties to it dynamically.
+
+// Code
+function ItsConstruct(name, email, age) {
+    this.name = name;
+    this.email = email;
+    this.age = age;
+};
+
+// creating objects using new keyword
+let user1 = new ItsConstruct("Suraj Kumar", "xyzsurajxd@gamil.com", 21);
+let user2 = new ItsConstruct("Jatin", "jatin@example.com", 22);
+
+// Explanation:
+// constructor function works with the new keyword.
+
+// when we run:
+let user1 = new ItsConstruct("Suraj Kumar", "xyzsurajxd@gamil.com", 21);
+
+// JavaScript internally does these steps:
+
+// 1. creates a new empty object
+// 2. sets this to point to that new object
+// 3. assigns the properties using this.name, this.email, this.age
+// 4. returns the created object automatically
+
+// so user1 becomes:
+{
+  name: "Suraj Kumar",
+  email: "xyzsurajxd@gamil.com",
+  age: 21
+}
+
+// Topic: Prototype
+
+// Concept: the concept behind prototype is shared memory between objects created from the same constructor.
+// every JavaScript function automatically has a prototype property.
+// objects created using that constructor can access properties and methods stored in that prototype.
+// we generally store methods in prototype so that all instances can share the same method instead of creating
+// a new copy for every object.
+
+// Code:
+function userConstructor(name, age, email) {
+    this.user = name;
+    this.age = age;
+    this.email = email;
+}
+
+// adding a method to prototype
+userConstructor.prototype.userRole = function(role){
+    this.role = role
+};
+
+let user1 = new userConstructor("Suraj Kumar", 21, "xyzsurajxd@gmail.com");
+let user2 = new userConstructor("Jatin", 22, "jatin@example.com");
+
+// using prototype method
+user1.userRole("normal");
+user2.userRole("admin");
+
+console.log(user1);
+console.log(user2);
+
+
+// Explanation:
+// here prototype is used to store methods which should be shared across all objects created
+// from this constructor.
+
+// when we create objects using new:
+
+let user1 = new userConstructor(...)
+
+// JavaScript does internally:
+
+// 1. creates a new object
+// 2. sets that object's internal [[Prototype]] link to userConstructor.prototype
+// 3. runs the constructor function with this pointing to that object
+// 4. returns the object
+
+// so user1 and user2 both have access to methods stored in userConstructor.prototype.
+
+// important point:
+// the method userRole is stored only once in memory,
+// but all instances can access it through the prototype chain.
+
+// Topic: Classes
+
+// Concept: classes work similar to constructor functions but they use a cleaner syntax.
+// they are syntactic sugar over prototype-based inheritance in JavaScript.
+// methods defined inside a class are automatically placed on the prototype.
+
+// Code:
+class createUser{
+    constructor(name, age, email){
+        this.name = name;
+        this.age = age;
+        this.email = email;
+    }
+
+    getRole(role){ 
+        // method defined inside class body
+        // this method is stored in the prototype of createUser
+        this.role = role;
+    }
+}
+
+let user1 = new createUser("Suraj Kumar", 21 ,"xyzsurajxd@gmail.com");
+let user2 = new createUser("Ritesh", 19 ,"ritesh@example.com");
+
+
+// Explanation:
+// classes provide a cleaner way to create objects and manage methods.
+
+// when we run:
+let user1 = new createUser(...)
+
+// JavaScript internally performs similar steps as constructor functions:
+
+// 1. creates a new empty object
+// 2. sets the object's prototype to createUser.prototype
+// 3. runs the constructor with this pointing to the new object
+// 4. returns the object
+
+// methods defined inside the class (like getRole) are stored in the prototype,
+// so they are shared across all instances instead of being recreated for each object.
+
+Topic: Inheritance
+
+Concept: inheritance means a class can reuse the properties and methods
+of another class. Instead of rewriting the same logic again, we extend
+a parent class and inherit its behavior.
+
+// Code:
+class UserDetails {
+    constructor(name, email, age) {
+        this.name = name;
+        this.email = email;
+        this.age = age;
+    }
+}
+
+class Admin extends UserDetails {
+    // Admin inherits all properties from UserDetails
+    constructor(name, email, age, role) {
+        super(name, email, age); // call parent constructor
+        this.role = role;
+    }
+}
+
+let user1 = new UserDetails("Suraj Kumar", "email@example.com", 21);
+let admin1 = new Admin("Admin Suraj", "admin@example.com", 25, "admin");
+
+console.log(user1);
+console.log(admin1);
+
+
+// Explanation:
+// "extends" creates inheritance between classes.
+// Admin automatically gets properties from UserDetails.
+
+// super() is used to call the parent constructor.
+// Without super() we cannot use "this" in the child class.
+
+// Prototype chain created internally:
+
+// admin1
+//   ↓
+// Admin.prototype
+//   ↓
+// UserDetails.prototype
+//   ↓
+// Object.prototype
+//   ↓
+// null
+
+// Topic: Callbacks
+
+// Concept: a callback is a function that is passed as an argument
+// to another function and is executed later inside that function.
+
+// Code:
+function processNumber(num, callback){
+    callback(num);
+}
+
+function printDouble(x){
+    console.log(x * 2);
+}
+
+processNumber(5, printDouble);
+
+
+// another example using anonymous function
+processNumber(10, function(x){
+    console.log(x + 1);
+});
+
+
+// Explanation:
+// here processNumber is a higher order function because it accepts
+// a function as an argument.
+
+// printDouble is a callback function because it is passed into
+// another function and executed later.
+
+// flow:
+// processNumber(5, printDouble)
+// ↓
+// callback(num)
+// ↓
+// printDouble(5)
+// ↓
+// output: 10
