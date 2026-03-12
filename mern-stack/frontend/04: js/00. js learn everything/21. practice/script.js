@@ -381,3 +381,277 @@ processNumber(10, function(x){
 // printDouble(5)
 // ↓
 // output: 10
+
+
+// Topic: Promises
+
+// Concept:
+// Promises are used to handle asynchronous operations in JavaScript. Earlier we used callbacks for async tasks, but when callbacks become nested deeply it creates a problem called "callback hell". Callback hell makes code very hard to read and maintain.
+
+// Promises solve this problem by providing a cleaner way to handle asynchronous flow.
+
+// A promise represents a value that will be available now, later, or never.
+
+// Promise has three states:
+// 1. Pending – the operation is still running.
+// 2. Fulfilled (Resolved) – the operation completed successfully.
+// 3. Rejected – the operation failed.
+
+// When we create a promise we get two functions:
+// resolve() – used when the operation succeeds.
+// reject() – used when the operation fails.
+
+// Example:
+
+new Promise((resolve, reject) => {
+   resolve(5)
+})
+
+// To consume promises we use:
+// .then() → handles success value
+// .catch() → handles error
+
+// Important concept:
+// Each .then() receives the value returned from the previous .then().
+
+// Example flow:
+
+// resolve(5)
+// ↓
+// .then(x => x * 2) → 10
+// ↓
+// .then(x => x + 3) → 13
+// ↓
+// .then(console.log)
+
+// Output:
+// 13
+
+// Promise chaining allows us to write asynchronous logic in a clean step-by-step flow instead of nested callbacks.
+
+
+// Topic: Async / Await and Promise Flow
+
+// Async / Await is a modern way to work with Promises in JavaScript. It allows asynchronous code to look and behave like synchronous code, making it easier to read and maintain.
+
+// Async Function:
+// When a function is declared with the "async" keyword, it automatically returns a Promise. Even if we return a normal value, JavaScript wraps it inside Promise.resolve().
+
+// Example:
+// async function test(){
+//     return 7;
+// }
+
+// This is internally equivalent to:
+// Promise.resolve(7)
+
+// Await Keyword:
+// The await keyword pauses the execution of an async function until the Promise resolves or rejects. It can only be used inside an async function.
+
+// Example:
+async function getData(){
+    let data = await fetch("url");
+    console.log(data);
+}
+
+// Here, execution waits until the fetch promise resolves.
+
+// Error Handling:
+// If a promise rejects while using await, it throws an error and stops the remaining execution of the function. To handle errors safely we use try/catch.
+
+// Example:
+async function getData(){
+    try{
+        let user = await getUser();
+        let posts = await getPosts(user);
+        console.log(posts);
+    } catch(error){
+        console.log("Error occurred:", error);
+    }
+}
+
+// Promise Chain Flow:
+// Each .then() receives the value returned by the previous .then().
+
+// Example:
+// resolve(5)
+// ↓
+// .then(x => x * 2) → 10
+// ↓
+// .then(x => x + 3) → 13
+// ↓
+// .then(console.log)
+
+// Async functions can also return values after awaiting multiple promises.
+
+// Example:
+async function test(){
+    let a = await Promise.resolve(5);
+    let b = await Promise.resolve(3);
+    return a + b;
+}
+
+test().then(console.log)
+
+// Output:
+// 8
+
+Promise Shortcuts
+
+Promise.resolve(value)
+→ creates resolved promise
+
+Promise.reject(error)
+→ creates rejected promise
+
+Async Function Behavior
+
+return value → Promise.resolve(value)
+throw error → Promise.reject(error)
+
+// Problem: Test 1
+async function checkNum(num) {
+    if(num%2==0) return "Even Num";
+    else throw "Odd Num";
+}
+checkNum(10).then(console.log);
+checkNum(5).catch(console.log);
+
+// Problem: Test 2
+function getValue(){
+   return Promise.resolve(10);
+}
+
+getValue()
+.then(x => x * 2)
+.then(console.log);
+
+async function getValues(num){
+    let res = Promise.resolve(num);
+    res.then(x => x * 2)
+    .then(console.log);
+}
+getValues(10);
+
+async function getValues(){
+    let x = await getValue();
+    let result = x * 2;
+    console.log(result); // await replaces .then()
+}
+
+getValues();
+
+// Problem: Test 3
+function getA(){
+    return Promise.resolve(5);
+}
+function getB(){
+    return Promise.resolve(3)
+}
+async function  calulate() {
+    let a = await getA();
+    let b = await getB();
+    return a + b;
+}
+calulate().then(console.log)
+
+
+Topic: Fetch API
+
+The Fetch API is used in browsers to make HTTP requests to servers.
+
+fetch(url) sends an HTTP request and returns a Promise that resolves to a Response object.
+
+Example:
+let res = await fetch(url)
+
+The Response object contains information about the HTTP response such as:
+- status
+- headers
+- body stream
+
+However, the body data is not directly usable yet.
+
+To read the body we use:
+res.json()
+
+Example:
+
+let res = await fetch(url)
+let data = await res.json()
+
+res.json() reads the response body and converts JSON data into a JavaScript object.
+
+Since res.json() also returns a Promise, it must be awaited.
+
+Example complete flow:
+
+async function getData(){
+    let res = await fetch(url)
+    let data = await res.json()
+    return data
+}
+
+// getData().then(console.log)
+
+// Problem 1 : 
+async function getToDo() {
+    let res = await fetch("https://jsonplaceholder.typicode.com/todos/2");
+    let data = await res.json();
+    return data;
+}
+getToDo().then((res) => {
+    console.log(res.title);
+})
+
+// Problem 2:
+async function getUser() {
+    let res = await fetch("https://jsonplaceholder.typicode.com/users");
+    let data = await res.json();
+    return data;
+}
+getUser().then((data) => {
+    data.forEach(element => {
+        console.log(element.name);
+    });
+})
+
+// Problem 3:
+async function taskStatus() {
+    let res = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+    let data = await res.json();
+    return data.completed;
+}
+taskStatus().then((flag) => {
+    if(flag === true) console.log("Task Completed");
+    else console.log("Task Pending");
+});
+
+Topic: HTTP Basics
+
+HTTP stands for HyperText Transfer Protocol. It is the protocol used for communication between a client (browser) and a server on the internet.
+
+When a browser requests data from a server, it sends an HTTP request. The server processes the request and sends back an HTTP response.
+
+Common HTTP Methods:
+
+GET
+Used to retrieve data from the server. It should not change the server data.
+
+POST
+Used to send data from the client to the server, usually to create or submit data.
+
+Example use cases:
+GET → fetch user data
+POST → submit form data
+
+HTTP Status Codes:
+
+200 OK
+The request was successful and the server returned the requested data.
+
+404 Not Found
+The requested resource does not exist on the server.
+
+500 Internal Server Error
+The server encountered an error while processing the request.
