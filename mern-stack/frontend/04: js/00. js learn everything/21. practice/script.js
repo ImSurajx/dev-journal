@@ -1,4 +1,6 @@
-// Topic: Scope
+////////////////////////////
+// TOPIC: Scope
+////////////////////////////
 
 // Concept: the concept behind scope is how a variable is defined in a file according to that it will decide from where it is accessible or from where it's not. 
 // scope basically decides the visibility and lifetime of variables in a program.
@@ -26,7 +28,10 @@ function name() {
 // lexical scope: child functions can access variables from their parent scope because scope is decided by where code is written.
 
 
-// Topic: Execution Context
+
+////////////////////////////
+// TOPIC: Execution Context
+////////////////////////////
 
 // Concept: execution context is the environment where JavaScript code is evaluated and executed. 
 // JavaScript creates two phases for each execution context: creation phase and execution phase.
@@ -61,7 +66,12 @@ console.log(y);
 // the time between entering the scope and initializing a variable declared with let or const is called TDZ.
 // accessing the variable in this time results in a reference error.
 
-// Topic: Closures
+
+
+////////////////////////////
+// TOPIC: Closures
+////////////////////////////
+
 // Concept: when a function returns another function and the inner function uses variables from the outer function scope,
 // this structure is known as a closure. the inner function remembers those variables even after the outer function finishes execution.
 
@@ -97,7 +107,11 @@ c();
 // The inner function remembers variables from its lexical scope
 // even after the outer function has finished execution.
 
-// this keyword
+
+
+////////////////////////////
+// TOPIC: this keyword
+////////////////////////////
 
 // Concept: the value of this keyword depends on how a function is called (call-site).
 // its value is determined at runtime. arrow functions are special because they do not
@@ -164,7 +178,10 @@ let newCheckThis = checkThis.bind(this)
 // normal functions get their this from the call-site (the object before the dot).
 // arrow functions do not have their own this, they inherit it from their lexical parent scope.
 
-// Topic: Constructor Functions
+
+////////////////////////////
+// TOPIC: Constructor Functions
+////////////////////////////
 
 // Concept: constructor functions are used to create multiple objects with the same structure.
 // using the new keyword JavaScript creates a new object and binds this to that object,
@@ -196,12 +213,16 @@ let user1 = new ItsConstruct("Suraj Kumar", "xyzsurajxd@gamil.com", 21);
 
 // so user1 becomes:
 {
-  name: "Suraj Kumar",
-  email: "xyzsurajxd@gamil.com",
-  age: 21
+    name: "Suraj Kumar",
+        email: "xyzsurajxd@gamil.com",
+            age: 21
 }
 
-// Topic: Prototype
+
+
+////////////////////////////
+// TOPIC: Prototype
+////////////////////////////
 
 // Concept: the concept behind prototype is shared memory between objects created from the same constructor.
 // every JavaScript function automatically has a prototype property.
@@ -217,7 +238,7 @@ function userConstructor(name, age, email) {
 }
 
 // adding a method to prototype
-userConstructor.prototype.userRole = function(role){
+userConstructor.prototype.userRole = function (role) {
     this.role = role
 };
 
@@ -253,29 +274,33 @@ let user1 = new userConstructor(...)
 // the method userRole is stored only once in memory,
 // but all instances can access it through the prototype chain.
 
-// Topic: Classes
+
+
+////////////////////////////
+// TOPIC: Classes
+////////////////////////////
 
 // Concept: classes work similar to constructor functions but they use a cleaner syntax.
 // they are syntactic sugar over prototype-based inheritance in JavaScript.
 // methods defined inside a class are automatically placed on the prototype.
 
 // Code:
-class createUser{
-    constructor(name, age, email){
+class createUser {
+    constructor(name, age, email) {
         this.name = name;
         this.age = age;
         this.email = email;
     }
 
-    getRole(role){ 
+    getRole(role) {
         // method defined inside class body
         // this method is stored in the prototype of createUser
         this.role = role;
     }
 }
 
-let user1 = new createUser("Suraj Kumar", 21 ,"xyzsurajxd@gmail.com");
-let user2 = new createUser("Ritesh", 19 ,"ritesh@example.com");
+let user1 = new createUser("Suraj Kumar", 21, "xyzsurajxd@gmail.com");
+let user2 = new createUser("Ritesh", 19, "ritesh@example.com");
 
 
 // Explanation:
@@ -293,6 +318,12 @@ let user1 = new createUser(...)
 
 // methods defined inside the class (like getRole) are stored in the prototype,
 // so they are shared across all instances instead of being recreated for each object.
+
+
+
+////////////////////////////
+// TOPIC: Inheritance
+////////////////////////////
 
 Topic: Inheritance
 
@@ -343,17 +374,20 @@ console.log(admin1);
 //   ↓
 // null
 
-// Topic: Callbacks
+
+////////////////////////////
+// TOPIC: Callbacks
+////////////////////////////
 
 // Concept: a callback is a function that is passed as an argument
 // to another function and is executed later inside that function.
 
 // Code:
-function processNumber(num, callback){
+function processNumber(num, callback) {
     callback(num);
 }
 
-function printDouble(x){
+function printDouble(x) {
     console.log(x * 2);
 }
 
@@ -361,7 +395,7 @@ processNumber(5, printDouble);
 
 
 // another example using anonymous function
-processNumber(10, function(x){
+processNumber(10, function (x) {
     console.log(x + 1);
 });
 
@@ -383,7 +417,10 @@ processNumber(10, function(x){
 // output: 10
 
 
-// Topic: Promises
+
+////////////////////////////
+// TOPIC: Promises
+////////////////////////////
 
 // Concept:
 // Promises are used to handle asynchronous operations in JavaScript. Earlier we used callbacks for async tasks, but when callbacks become nested deeply it creates a problem called "callback hell". Callback hell makes code very hard to read and maintain.
@@ -404,7 +441,7 @@ processNumber(10, function(x){
 // Example:
 
 new Promise((resolve, reject) => {
-   resolve(5)
+    resolve(5)
 })
 
 // To consume promises we use:
@@ -430,7 +467,10 @@ new Promise((resolve, reject) => {
 // Promise chaining allows us to write asynchronous logic in a clean step-by-step flow instead of nested callbacks.
 
 
-// Topic: Async / Await and Promise Flow
+
+////////////////////////////
+// TOPIC: Async / Await and Promise Flow
+////////////////////////////
 
 // Async / Await is a modern way to work with Promises in JavaScript. It allows asynchronous code to look and behave like synchronous code, making it easier to read and maintain.
 
@@ -449,7 +489,7 @@ new Promise((resolve, reject) => {
 // The await keyword pauses the execution of an async function until the Promise resolves or rejects. It can only be used inside an async function.
 
 // Example:
-async function getData(){
+async function getData() {
     let data = await fetch("url");
     console.log(data);
 }
@@ -460,12 +500,12 @@ async function getData(){
 // If a promise rejects while using await, it throws an error and stops the remaining execution of the function. To handle errors safely we use try/catch.
 
 // Example:
-async function getData(){
-    try{
+async function getData() {
+    try {
         let user = await getUser();
         let posts = await getPosts(user);
         console.log(posts);
-    } catch(error){
+    } catch (error) {
         console.log("Error occurred:", error);
     }
 }
@@ -485,7 +525,7 @@ async function getData(){
 // Async functions can also return values after awaiting multiple promises.
 
 // Example:
-async function test(){
+async function test() {
     let a = await Promise.resolve(5);
     let b = await Promise.resolve(3);
     return a + b;
@@ -496,44 +536,48 @@ test().then(console.log)
 // Output:
 // 8
 
-Promise Shortcuts
+// Promise Shortcuts
 
-Promise.resolve(value)
-→ creates resolved promise
+// Promise.resolve(value)
+// → creates resolved promise
 
-Promise.reject(error)
-→ creates rejected promise
+// Promise.reject(error)
+// → creates rejected promise
 
-Async Function Behavior
+// Async Function Behavior
 
-return value → Promise.resolve(value)
-throw error → Promise.reject(error)
+// return value → Promise.resolve(value)
+// throw error → Promise.reject(error)
+
+
 
 // Problem: Test 1
 async function checkNum(num) {
-    if(num%2==0) return "Even Num";
+    if (num % 2 == 0) return "Even Num";
     else throw "Odd Num";
 }
 checkNum(10).then(console.log);
 checkNum(5).catch(console.log);
 
+
+
 // Problem: Test 2
-function getValue(){
-   return Promise.resolve(10);
+function getValue() {
+    return Promise.resolve(10);
 }
 
 getValue()
-.then(x => x * 2)
-.then(console.log);
+    .then(x => x * 2)
+    .then(console.log);
 
-async function getValues(num){
+async function getValues(num) {
     let res = Promise.resolve(num);
     res.then(x => x * 2)
-    .then(console.log);
+        .then(console.log);
 }
 getValues(10);
 
-async function getValues(){
+async function getValues() {
     let x = await getValue();
     let result = x * 2;
     console.log(result); // await replaces .then()
@@ -541,14 +585,16 @@ async function getValues(){
 
 getValues();
 
+
+
 // Problem: Test 3
-function getA(){
+function getA() {
     return Promise.resolve(5);
 }
-function getB(){
+function getB() {
     return Promise.resolve(3)
 }
-async function  calulate() {
+async function calulate() {
     let a = await getA();
     let b = await getB();
     return a + b;
@@ -556,43 +602,49 @@ async function  calulate() {
 calulate().then(console.log)
 
 
-Topic: Fetch API
 
-The Fetch API is used in browsers to make HTTP requests to servers.
+////////////////////////////
+// TOPIC: Fetch API
+////////////////////////////
 
-fetch(url) sends an HTTP request and returns a Promise that resolves to a Response object.
+// Topic: Fetch API
 
-Example:
-let res = await fetch(url)
+// The Fetch API is used in browsers to make HTTP requests to servers.
 
-The Response object contains information about the HTTP response such as:
-- status
-- headers
-- body stream
+// fetch(url) sends an HTTP request and returns a Promise that resolves to a Response object.
 
-However, the body data is not directly usable yet.
+// Example:
+// let res = await fetch(url)
 
-To read the body we use:
-res.json()
+// The Response object contains information about the HTTP response such as:
+// - status
+// - headers
+// - body stream
 
-Example:
+// However, the body data is not directly usable yet.
 
-let res = await fetch(url)
-let data = await res.json()
+// To read the body we use:
+// res.json()
 
-res.json() reads the response body and converts JSON data into a JavaScript object.
+// Example:
 
-Since res.json() also returns a Promise, it must be awaited.
+// let res = await fetch(url)
+// let data = await res.json()
 
-Example complete flow:
+// res.json() reads the response body and converts JSON data into a JavaScript object.
 
-async function getData(){
+// Since res.json() also returns a Promise, it must be awaited.
+
+// Example complete flow:
+
+async function getData() {
     let res = await fetch(url)
     let data = await res.json()
     return data
 }
 
 // getData().then(console.log)
+
 
 // Problem 1 : 
 async function getToDo() {
@@ -603,6 +655,8 @@ async function getToDo() {
 getToDo().then((res) => {
     console.log(res.title);
 })
+
+
 
 // Problem 2:
 async function getUser() {
@@ -616,6 +670,8 @@ getUser().then((data) => {
     });
 })
 
+
+
 // Problem 3:
 async function taskStatus() {
     let res = await fetch("https://jsonplaceholder.typicode.com/todos/1");
@@ -623,35 +679,41 @@ async function taskStatus() {
     return data.completed;
 }
 taskStatus().then((flag) => {
-    if(flag === true) console.log("Task Completed");
+    if (flag === true) console.log("Task Completed");
     else console.log("Task Pending");
 });
 
-Topic: HTTP Basics
 
-HTTP stands for HyperText Transfer Protocol. It is the protocol used for communication between a client (browser) and a server on the internet.
 
-When a browser requests data from a server, it sends an HTTP request. The server processes the request and sends back an HTTP response.
+////////////////////////////
+// TOPIC: HTTP Basics
+////////////////////////////
 
-Common HTTP Methods:
+// Topic: HTTP Basics
 
-GET
-Used to retrieve data from the server. It should not change the server data.
+// HTTP stands for HyperText Transfer Protocol. It is the protocol used for communication between a client (browser) and a server on the internet.
 
-POST
-Used to send data from the client to the server, usually to create or submit data.
+// When a browser requests data from a server, it sends an HTTP request. The server processes the request and sends back an HTTP response.
 
-Example use cases:
-GET → fetch user data
-POST → submit form data
+// Common HTTP Methods:
 
-HTTP Status Codes:
+// GET
+// Used to retrieve data from the server. It should not change the server data.
 
-200 OK
-The request was successful and the server returned the requested data.
+// POST
+// Used to send data from the client to the server, usually to create or submit data.
 
-404 Not Found
-The requested resource does not exist on the server.
+// Example use cases:
+// GET → fetch user data
+// POST → submit form data
 
-500 Internal Server Error
-The server encountered an error while processing the request.
+// HTTP Status Codes:
+
+// 200 OK
+// The request was successful and the server returned the requested data.
+
+// 404 Not Found
+// The requested resource does not exist on the server.
+
+// 500 Internal Server Error
+// The server encountered an error while processing the request.
