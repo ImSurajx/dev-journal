@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 200;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    background: #333;
+    color: #fff;
+} 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1e1e2f, #2c2c54);
+  color: white;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  p {
+    color: #ccc;
+    margin-top: 8px;
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  }
+
+  p {
+    padding: 12px;
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
+.image-wrapper {
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  background: #333;
+}
+
+/* Shimmer effect */
+.image-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -200px;
+  height: 100%;
+  width: 200px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255,255,255,0.3),
+    transparent
+  );
+  animation: shimmer 1.2s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(400px);
+  }
+}
+
+.lazy-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.4s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.lazy-image.loaded {
+  opacity: 1;
+}
+
+.image-wrapper.loaded::before {
+  display: none;
+}
