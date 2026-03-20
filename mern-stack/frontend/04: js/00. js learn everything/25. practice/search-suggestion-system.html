@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS: Search Suggestion System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 200;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            background: #333;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input {
+            margin: 1rem;
+            border: none;
+            outline: none;
+            height: 3rem;
+            width: 20rem;
+            padding: 1rem;
+            font-weight: 300;
+            border-radius: 1rem;
+        }
+
+        #result {
+            border-radius: 1rem;
+            height: 80vh;
+            width: 80vw;
+            background: #fff;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #000;
+            font-size: 3rem;
+            margin: 3rem 3rem;
+        }
+
+        #result ul {
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- debouncing example -->
+    <input type="text" name="search" id="search" placeholder="search...">
+    <div id="result">
+        <ul>
+        </ul>
+    </div>
+    <script>
+        let searchField = document.querySelector('#search');
+        let resultField = document.querySelector('#result');
+
+        function fakeApi(query) {
+            return [
+                // Mammals
+                "Lion", "Tiger", "Elephant", "Giraffe", "Zebra", "Hippopotamus", "Gorilla", "Chimpanzee", "Panda", "Kangaroo",
+                "Koala", "Sloth", "Otter", "Beaver", "Hedgehog", "Hamster", "Guinea Pig", "Rabbit", "Squirrel", "Chipmunk",
+                "Deer", "Moose", "Elk", "Wolf", "Coyote", "Fox", "Bear", "Polar Bear", "Raccoon", "Skunk",
+                "Bat", "Whale", "Dolphin", "Porpoise", "Seal", "Walrus", "Manatee", "Platypus", "Armadillo", "Anteater",
+
+                // Birds
+                "Eagle", "Falcon", "Hawk", "Owl", "Parrot", "Penguin", "Ostrich", "Flamingo", "Peacock", "Swan",
+                "Duck", "Goose", "Turkey", "Chicken", "Robin", "Blue Jay", "Cardinal", "Sparrow", "Hummingbird", "Toucan",
+
+                // Reptiles & Amphibians
+                "Alligator", "Crocodile", "Turtle", "Tortoise", "Snake", "Lizard", "Chameleon", "Iguana", "Gecko", "Komodo Dragon",
+                "Frog", "Toad", "Salamander", "Newt", "Axolotl",
+
+                // Fish & Marine Life
+                "Shark", "Ray", "Eel", "Seahorse", "Clownfish", "Angelfish", "Salmon", "Trout", "Tuna", "Swordfish",
+                "Octopus", "Squid", "Jellyfish", "Starfish", "Crab", "Lobster", "Shrimp", "Oyster", "Clam", "Snail",
+
+                // Insects & Others
+                "Butterfly", "Bee", "Ant", "Grasshopper", "Cricket", "Spider", "Scorpion", "Centipede", "Ladybug", "Dragonfly"
+            ].filter((item) => {
+                return item.toLowerCase().includes(query.toLowerCase());
+            });
+        }
+
+        function renderUI(searchValue) {
+            resultField.innerHTML = '';
+            if (!searchValue.trim()) {
+                resultField.innerHTML = "";
+                return;
+            }
+            let ul = document.createElement('ul');
+            let searchResults = fakeApi(searchValue);
+            console.log(searchResults.length);
+
+            if (searchResults.length === 0) {
+                resultField.innerHTML = "no result found";
+                return;
+            }
+
+            searchResults.slice(0, 5).forEach((el) => {
+                const regx = new RegExp(`${searchValue}`, "gi");
+                const highlighted = el.replace(
+                    regx,
+                    (match) => `<span style="color:red; font-weight:bold;">${match}</span>`
+                );
+                let li = document.createElement('li');
+                li.innerHTML = highlighted;
+                console.log(li);
+                ul.appendChild(li);
+            });
+            resultField.append(ul);
+        }
+        // manage search 
+        function debounce(fnc, delay) {
+            let timer;
+            return function (...args) {
+                clearTimeout(timer);
+                timer = setTimeout(() => {
+                    fnc(...args);
+                }, delay)
+            }
+        }
+
+        searchField.addEventListener("input", debounce(function (e) {
+            // resultField.textContent="Hello"
+            resultField.textContent = "Searching...";
+            renderUI(e.target.value);
+        }, 1000));
+
+    </script>
+</body>
+
+</html>
