@@ -1,28 +1,26 @@
+// Binary Search
 #include <iostream>
-#include <vector>
 using namespace std;
-int main()
+int BinarySearch(vector<int> &nums, int target)
 {
-    vector<int> nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13, 15, 16};
-    int target = 0;
-    int high = nums.size() - 1, low = 0;
+    int low = 0;
+    int high = nums.size() - 1;
     while (low <= high)
     {
         int mid = low + (high - low) / 2;
         if (nums[mid] == target)
-        {
-            cout << mid << endl;
-            break;
-        }
+            return mid;
         else if (nums[mid] > target)
-        {
             high = mid - 1;
-        }
         else if (nums[mid] < target)
-        {
             low = mid + 1;
-        }
     }
-    cout << -1 << endl;
+    return -1;
+}
+int main()
+{
+    vector<int> nums = {2, 4, 6, 8, 10};
+    int getIndex = BinarySearch(nums, 5);
+    cout << "the target value is: " << getIndex << endl;
     return 0;
 }
