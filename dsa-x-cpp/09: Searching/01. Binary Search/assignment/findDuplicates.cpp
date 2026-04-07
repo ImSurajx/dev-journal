@@ -4,31 +4,29 @@
 // Input 1: arr[] = {1,2,3,3,4}
 // Output 1: 3
 // Input 2: arr[] = {1,2,2,3,4,5}
-// Output 2: 2
+// Output 2:
 #include <iostream>
 using namespace std;
 int findDuplicate(vector<int> &nums)
 {
-    int low = 1;                // minimum value of whole series
-    int high = nums.size() - 1; // highest value of whole series
+    int low = 1;
+    int high = nums.size() - 1;
     while (low <= high)
     {
-        int mid = low + (high - low) / 2;
         int count = 0;
+        int mid = low + (high - low) / 2;
         for (int i = 0; i < nums.size(); i++)
         {
             if (nums[i] <= mid)
-            {
                 count++;
-            }
         }
-        if (count > mid)
+        if (count <= mid)
         {
-            high = mid - 1;
+            low = mid + 1; // right
         }
         else
         {
-            low = mid + 1;
+            high = mid - 1; // left
         }
     }
     return low;
@@ -36,6 +34,7 @@ int findDuplicate(vector<int> &nums)
 int main()
 {
     vector<int> nums = {1, 2, 3, 3, 4};
-    cout << "duplicate value is: " << findDuplicate(nums) << endl;
+    int duplicate = findDuplicate(nums);
+    cout << "duplicate element is: " << duplicate << endl;
     return 0;
 }
