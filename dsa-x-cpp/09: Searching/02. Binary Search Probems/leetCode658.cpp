@@ -121,12 +121,34 @@ vector<int> getClosestElement(vector<int> &nums, int target, int total)
     sort(closest.begin(), closest.end());
     return closest;
 }
+
+// anothe approach using binary search on window -> far better way using log n
+vector<int> findClosestElements(vector<int> &arr, int k, int x)
+{
+    int low = 0;
+    int high = arr.size() - k;
+    while (low < high)
+    {
+        int mid = low + (high - low) / 2;
+        // get a window compare the value which give diff result like edge of first window with second window.
+        if (x - arr[mid] > arr[mid + k] - x)
+        {
+            high = mid;
+        }
+        else
+        {
+            low = mid + 1;
+        }
+    }
+    // return that vector
+    return vector<int>(arr.begin() + low, arr.begin() + low + k);
+}
 int main()
 {
     vector<int> nums = {1, 2, 3, 5, 6, 7};
     int x = 4;
     int k = 4;
-    vector<int> closest = getClosestElement(nums, x, k);
+    vector<int> closest = findClosestElements(nums, x, k);
     for (int i = 0; i < closest.size(); i++)
         cout << closest[i] << ", ";
     return 0;
