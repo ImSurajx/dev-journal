@@ -1,1 +1,26 @@
+# Prerequisites
+*.log
+*.tmp
+*.bak
+*.swp
+
+# OS-specific files
 .DS_Store
+Thumbs.db
+
+# Environment variables (SECURITY: Never commit these!)
+.env
+.env.local
+.env.*.local
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Build and Dependency Directories (Adjust for your language)
+node_modules/
+build/
+bin/
+obj/
