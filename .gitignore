@@ -24,3 +24,4 @@ node_modules/
 build/
 bin/
 obj/
+.venv
