@@ -1,6 +1,6 @@
 # 📓 dev-journal
 
-A private developer journal documenting my complete learning journey — from **day zero to job-ready**.  
+A public developer journal documenting my complete learning journey — from **day zero to job-ready**.  
 This repository serves as a living log of my growth as a developer, capturing daily progress, assignments, challenges, experiments, projects, and reflections across multiple domains of modern software development.
 
 ---
@@ -83,17 +83,18 @@ This experience shaped my **problem-solving mindset, persistence, and learning d
 
 ## 🔐 Visibility
 
-This repository is **private** by design.
+This repository is now **public** as part of my commitment to **learning in public**.
 
 It exists to:
-- think freely
+- document my real growth journey
 - experiment openly
-- learn honestly
-- and grow without pressure
+- stay accountable
+- share progress transparently
+- inspire others starting from zero
 
-Some parts may later inspire public repositories.
+This repo may contain imperfect code, rewrites, and changing approaches — that is intentional and reflects real learning.
 
----
+Some polished work may later move into dedicated project repositories.
 
 ## 📈 Long-Term Goals
 
