@@ -122,6 +122,61 @@ function brew(order: MasalaChai | GingerChai) {
     }
 }
 
-function isStringArray(arr: unknown): arr is string[]{
-    // return arr[];
+function isStringArray(arr: unknown): arr is string[] {
+    return Array.isArray(arr) &&
+           arr.every(item => typeof item === "string");
+}
+
+// type assertion
+let response: any = "42";
+let nurmaricLength: number = (response as string).length; // do type assertion forcefully.
+type book = {
+    name: string
+}
+let bookString = '{"name": "who moved my cheese" }';
+let bookObject = JSON.parse(bookString) as book;
+const inutElement = document.getElementById("username") as HTMLInputElement;
+
+// unkown vs any
+let value: any;
+value = "chai";
+value = [1, 2, 3];
+value.toUpperCase();
+let xvalue: unknown;
+xvalue = "chai";
+xvalue = [1, 2, 3];
+// xvalue.toUpperCase();
+if (typeof xvalue === "string") xvalue.toUpperCase(); // work here...
+
+// try & catch
+try {
+
+} catch (error) {
+    if (error instanceof Error) {
+        console.log(error.message);
+    }
+    console.log('Error', error);
+}
+
+const data: unknown = "chai aur code";
+const strData: string = data as string;
+
+type Role = "admin" | "user";
+
+function redirectBasedOnRole(role: Role): void {
+    if (role === 'admin') {
+        console.log("redirect to admin dashboard");
+        return;
+    }
+    else if (role === 'user') {
+        console.log("redirect to user dashboard");
+        return;
+    }
+    role; // never, because already manage all cases..
+}
+
+function nverReturn(): never {
+    while(true){
+
+    }
 }
