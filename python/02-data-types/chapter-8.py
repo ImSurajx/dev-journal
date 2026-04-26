@@ -22,3 +22,13 @@ print(f"chai: {chai_ingredients}")
 sugar_level = [0,1,2,3,45]
 print(f"maximum: {max(sugar_level)}")
 print(f"maximum: {min(sugar_level)}")
+
+# operative overloading
+base_liquid = ["water", "milk"]
+extra_flavor = ["ginger"]
+
+full_liquid_mix = base_liquid + extra_flavor
+print(f"{full_liquid_mix}")
+
+strong_brew = ["black_tea", "water"] * 3
+print(f"string brew: {strong_brew}")
