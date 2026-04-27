@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 200;
+}
+
+.card-container {
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.card-container .button {
+  padding: 0.5rem;
+  background-color: black;
+  color: white;
+  width: 100px;
+  text-align: center;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.card-container .card {
+  border-radius: 0.5rem;
+  height: 500px;
+  width: 400px;
+  border: 1px solid black;
+  padding: 0.5rem;
+}
+.card-container .card .img-cont {
+  border: 1px solid black;
+  height: 85%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.card-container .card .img-cont img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.card-container .card .details {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+}
+.card-container .card .details .rp-cont {
+  display: flex;
+  font-size: 0.5rem;
+  justify-content: space-between;
+}/*# sourceMappingURL=style.css.map */
