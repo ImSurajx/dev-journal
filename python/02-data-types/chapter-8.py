@@ -32,3 +32,10 @@ print(f"{full_liquid_mix}")
 
 strong_brew = ["black_tea", "water"] * 3
 print(f"string brew: {strong_brew}")
+
+# bytearray in python:
+# bytearray is a mutable sequence of bytes. It is similar to bytes, but unlike bytes, bytearray can be modified after it is created. This makes it useful for situations where you need to manipulate binary data, such as when working with files or network communication.
+raw_spice = bytearray(b"cardamon")
+raw_spice.replace(b"cardamon", b"cinnamon")
+print(f"raw spice: {raw_spice}")
+
