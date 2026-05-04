@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- SEO:
+        SEO stands for Search Engine Optimization, which is the practice of optimizing a website to improve its visibility and ranking on search engine results pages (SERPs). The goal of SEO is to increase organic (non-paid) traffic to a website by making it more attractive and relevant to search engines. This can be achieved through various techniques, such as keyword research, on-page optimization, link building, and content creation. By improving a website's SEO, it can attract more visitors, generate leads, and ultimately increase revenue for businesses. 
+        -->
+    <meta charset="UTF-8" />
+    <!-- 
+        meta charset: that i'm going to use chracters set - 8 for this whole website
+        meta viewport: that i'm going to use responsive design for this website, which means that this website will be look good on all devices such as mobile, tablet, desktop, etc. 
+        contett: "width=device-width, initial-scale=1.0" means that the width of the viewport will be equal to the width of the device and the initial scale of the website will be 1.0, which means that the website will be displayed at its actual size without any zooming.
+        -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- description: A brief description of the webpage -->
+    <meta name="description" content="This is a boilerplate for HTML5" />
+    <!-- robots: Controls how search engines crawl and index the webpage -->
+    <meta name="robots" content="index, follow">
+    <!-- title: The title of the webpage -->
+    <title>BoilerPlate</title>
+    <!-- 
+        link: used to link external resources such as CSS stylesheets, JavaScript files, and favicon. It is placed in the head section of the HTML document and has various attributes that specify the type of resource being linked, the location of the resource, and how it should be used in the webpage. For example, to link a CSS stylesheet, you would use the following code: <link rel="stylesheet" href="style.css">. This tells the browser to load the style.css file and apply its styles to the webpage. Similarly, to link a JavaScript file, you would use: <script src="script.js"></script>. This tells the browser to load the script.js file and execute its code on the webpage. The link tag can also be used to specify a favicon for the website, which is a small icon that appears in the browser tab next to the page title. To do this, you would use: <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">. 
+
+        link:favicon, link:css, link:js, link:preload, link:prefetch, link:canonical, link:alternate, link:manifest, link:apple-touch-icon, link:mask-icon, link:icon, link:stylesheet, link:preconnect, link:dns-prefetch, link:modulepreload
+        there are many other link rel values which are used for different purposes, but these are the most commonly used ones in web development.
+        -->
+    <!-- utm source: this is a link tag with utm parameters for tracking purposes -->
+    <link
+      utm_source="google"
+      utm_medium="cpc"
+      utm_campaign="summer_sale"
+      rel="stylesheet"
+      href="style.css"
+    />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <!-- canonical: this is a link tag with rel="canonical" which is used to specify the preferred URL for a webpage when there are multiple URLs that can access the same content. It helps search engines understand which URL to index and display in search results, preventing duplicate content issues and improving SEO. The href attribute of the canonical link should point to the preferred URL of the webpage. -->
+    <link rel="canonical" href="https://example.com" />
+    <!-- preconnect: this is a link tag with rel="preconnect" which is used to establish an early connection to a third-party domain before any resources from that domain are requested. This can improve performance by reducing the time it takes to establish a connection to the domain. -->
+    <link rel="preconnect" href="https://example.com" />
+  </head>
+  <body>
+    <!-- files & folder -->
+    <!-- files: index.html, style.css, script.js is kind of files which are used in web development -->
+    <!-- folder: assets, images, css, js is kind of folder which are used in web development -->
+    <!-- Heading -->
+    <h1>Hello, World!</h1>
+    <h2>Hello, World!</h2>
+    <h3>Hello, World!</h3>
+    <h4>Hello, World!</h4>
+    <h5>Hello, World!</h5>
+    <h6>Hello, World!</h6>
+
+    <!-- Paragraph -->
+    <p>This is a simple paragraph.</p>
+
+    <!-- Lorem ipsum -->
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus tempora
+      repudiandae illum neque ut numquam suscipit similique aperiam dolores
+      architecto odit maxime cum, temporibus ipsum laudantium amet sit debitis
+      veniam?
+    </p>
+
+    <!-- br & hr tag -->
+    <br />
+    <hr />
+    <p>This is another paragraph after a line break.</p>
+
+    <!-- bold & italic -->
+
+    <!-- old markup -->
+    <p><b>This is bold text.</b></p>
+    <p><i>This is italic text.</i></p>
+
+    <!-- new markup -->
+    <p>This is a <strong>bold</strong> paragraph.</p>
+    <p>This is an <em>italic</em> paragraph.</p>
+    <!-- abbr tag: abbreviation -->
+    <p>
+      HTML is very important<abbr title="Hypertext Markup Language">HTML</abbr>
+      for web development.
+    </p>
+
+    <!-- sup & sub -->
+    <p>This is a <sup>superscript</sup> paragraph.</p>
+    <p>This is a <sub>subscript</sub> paragraph.</p>
+
+    <!-- lists -->
+
+    <!-- ordered list -->
+    <ol>
+      <li>First item</li>
+      <li>Second item</li>
+      <li>Third item</li>
+    </ol>
+
+    <!-- unordered list -->
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+    <!-- reverse attribute -->
+    <p>why reverse is not working in ol tag?</p>
+    <p>
+      The reverse attribute is not supported in HTML5. It was used in older
+      versions of HTML to reverse the order of list items in an ordered list.
+      However, it has been deprecated
+    </p>
+    <ol reverse>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ol>
+    <!-- anchor tag -->
+    <!-- what is anchor tag: anchor tag is used to create a hyperlink to another page or resource -->
+
+    <!-- what is attribute: attribute is a property of an HTML element that provides additional information about the element -->
+
+    <!-- what is href attribute: href attribute specifies the URL of the page the link points to 
+                href use case:
+                tel: to create a clickable phone number link
+                mailto: to create a clickable email address link
+                # to create an anchor link to a specific section of the same page 
+        -->
+
+    <!-- what is target attribute: target attribute specifies where to open the linked document 
+                target use case:
+                _blank: opens the link in a new tab or window
+                _self: opens the link in the same tab or window
+                _parent: opens the link in the parent frame
+                _top: opens the link in the full body of the window
+        -->
+
+    <!-- download attribute: download attribute specifies that the linked file should be downloaded -->
+    <a href="https://www.google.com" target="_blank" download="xyz"
+      >Visit Google</a
+    >
+
+    <!-- details tag: details tag is used to create a collapsible section of content that can be expanded or collapsed by the user. It is often used to hide additional information or details that may not be necessary for the user to see at first glance. -->
+    <details>
+      <summary>Click to expand</summary>
+      <p>This is the details content.</p>
+    </details>
+
+    <!-- select tag: select tag is used to create a drop-down list of options that the user can choose from. It is often used in forms to allow users to select one or more options from a predefined list. The select tag is typically used in conjunction with the option tag, which defines each individual option within the drop-down list. -->
+    <select name="harsh" id="">
+      <option value="option1">Option 1</option>
+      <option value="option2">Option 2</option>
+      <option value="option3">Option 3</option>
+    </select>
+
+    <!-- media tags -->
+    <!-- image tag: self closing tag 
+            where:
+            src: specifies the URL of the image to be displayed
+            alt: provides alternative text for the image if it cannot be displayed 
+            height: specifies the height of the image
+            width: specifies the width of the image
+        -->
+    <img
+      src="https://images.unsplash.com/photo-1774986435841-a3e205655f36?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      alt="Example Image"
+      height="200"
+    />
+    <!-- video tag: use to embed video content in a webpage
+            where:
+            src: specifies the URL of the video to be played
+            type: specifies the MIME type of the video file. This is important for ensuring that the video can be played in different browsers, as different browsers may support different
+            types of video format: mp4, webm, ogg
+            play controls: controls attribute is used to display the video controls such as play, pause, volume, etc.
+            loop: loop attribute is used to specify that the video should start over again, every time it is finished
+            autoplay: autoplay attribute is used to specify that the video should start playing as soon as it is ready
+            muted: muted attribute is used to specify that the audio should be muted when the video is played
+            poster: poster attribute is used to specify an image to be shown while the video is downloading, or until the user hits the play button
+            preload: preload attribute is used to specify how the video should be loaded when the page loads. It can take three values: auto, metadata, and none. auto: the video should be loaded entirely when the page loads. metadata: only the metadata of the video should be loaded when the page loads. none: the video should not be loaded when the page loads, but should be loaded when the user clicks the play button.    
+        -->
+    <video
+      width="320"
+      height="240"
+      controls
+      autoplay
+      loop
+      muted
+      preload="auto"
+      poster="https://images.unsplash.com/photo-1774986435841-a3e205655f36?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      preload="auto"
+    >
+      <source
+        src="https://www.pexels.com/download/video/36482776/"
+        type="video/mp4"
+      />
+      Your browser does not support the video tag.
+    </video>
+    <!-- audio tag: use to embed audio content in a webpage
+        audio tag is used to embed audio content in a webpage. It provides a way to play audio files directly in the browser without the need for external plugins. The audio tag supports various attributes that allow you to control the playback of the audio, such as controls, autoplay, loop, muted, and preload. You can also specify multiple source files for the audio using the source tag, which allows the browser to choose the best format for playback based on its capabilities.
+        user case: music player, podcast player, audio book player, etc.
+        -->
+    <audio src="zyz.mp3" controls preload="auto"></audio>
+
+    <!-- table: create a table with rows and columns
+            th: table header
+            tr: table row
+            td: table data 
+        -->
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>City</th>
+      </tr>
+      <tr>
+        <td>John Doe</td>
+        <td>30</td>
+        <td>New York</td>
+      </tr>
+      <tr>
+        <td>Jane Smith</td>
+        <td>25</td>
+        <td>Los Angeles</td>
+      </tr>
+    </table>
+    <!-- forms: create a form
+            where:
+            action: specifies the URL where the form data will be sent when the form is submitted   
+            method: specifies the HTTP method to be used when submitting the form data. It can take two values: GET and POST. GET: the form data will be appended to the URL as query parameters when the form is submitted. POST: the form data will be sent in the body of the HTTP request when the form is submitted. 
+
+            input: creates an input field where users can enter data. It supports various types of input, such as text, password, email, number, etc. The type attribute is used to specify the type of input field to be created.
+
+            label: creates a label for an input field. It is used to provide a description or instruction for the input field. The for attribute is used to associate the label with a specific input field by matching the value of the for attribute with the id of the input field.
+            
+            textarea: creates a multi-line input field where users can enter larger amounts of text. It is often used for comments, feedback, or any other type of input that requires more space than a single line. The rows and cols attributes are used to specify the number of rows and columns for the textarea, respectively.
+            
+            select: creates a drop-down list of options that users can choose from. It is often used in forms to allow users to select one or more options from a predefined list. The select tag is typically used in conjunction with the option tag, which defines each individual option within the drop-down list. The name attribute is used to specify the name of the select element, which is used to identify the selected option when the form is submitted.
+            
+            button: creates a clickable button that can be used to submit a form or trigger a JavaScript function. The type attribute is used to specify the type of button to be created, such as submit, reset, or button. The value attribute is used to specify the text that will be displayed on the button.
+            
+            fieldset: creates a grouping of related form elements. It is often used to group together related input fields, such as those that belong to the same section of a form. The legend tag is used to provide a caption for the fieldset, which helps to identify the purpose of the grouped form elements.
+
+            placeholder attribute: placeholder attribute is used to provide a short hint that describes the expected value of an input field. It is displayed inside the input field when it is empty and disappears when the user starts typing. The placeholder text can be used to provide guidance or examples for the user, making it easier for them to understand what kind of input is expected.
+
+            type attribute: type attribute is used to specify the type of input field to be created. It can take various values, such as text, password, email, number, etc. The type attribute determines the behavior and appearance of the input field, as well as the kind of data that can be entered into it. For example, a text input field allows users to enter any kind of text, while a password input field hides the entered text for security purposes. An email input field validates that the entered value is in the correct email format, and a number input field allows only numeric values to be entered.
+
+            used for:
+                - text: used for general text input, such as names, addresses, etc.
+                - password: used for sensitive information that should be hidden, such as passwords
+                - email: used for email addresses, with built-in validation for correct format
+                - number: used for numeric input, with options for min, max, and step values
+                - date: used for selecting dates, with a calendar interface
+                - checkbox: used for selecting multiple options from a list
+                - radio: used for selecting a single option from a list of options
+
+            id attribute: id attribute is used to uniquely identify an HTML element. It is often used in conjunction with the label tag to associate a label with a specific input field. The value of the id attribute must be unique within the HTML document, meaning that no two elements can have the same id value. This allows for precise targeting of elements using CSS or JavaScript, making it easier to style or manipulate specific elements on the page.
+
+            class: class attribute is used to specify one or more class names for an HTML element. It is often used to apply CSS styles to specific elements or groups of elements. The value of the class attribute can be a single class name or multiple class names separated by spaces. By assigning a class name to an element, you can target that element in your CSS stylesheet and apply specific styles to it, such as colors, fonts, layout, etc. Additionally, you can use JavaScript to manipulate elements based on their class names, allowing for dynamic interactions and functionality on the webpage.
+
+            for: for attribute is used in the label tag to associate the label with a specific input field. The value of the for attribute should match the id of the input field that it is labeling. This association allows users to click on the label to focus on the corresponding input field, improving accessibility and usability of the form. For example, if you have an input field with an id of "email", you can create a label with a for attribute of "email" to link the two together:
+        -->
+    <!-- create a form which use all input types -->
+    <form action="/submit" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required /><br /><br />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required /><br /><br />
+
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        required
+      /><br /><br />
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" /><br /><br />
+
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option></select
+      ><br /><br />
+      <input type="radio" name="gender" value="male" id="male" />
+      <label for="male">Male</label>
+      <input type="radio" name="gender" value="female" id="female" />
+      <label for="female">Female</label>
+      <input type="radio" name="gender" value="other" id="other" />
+      <label for="other">Other</label>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
