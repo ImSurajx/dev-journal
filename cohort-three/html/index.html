@@ -14,7 +14,7 @@
     <!-- description: A brief description of the webpage -->
     <meta name="description" content="This is a boilerplate for HTML5" />
     <!-- robots: Controls how search engines crawl and index the webpage -->
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow" />
     <!-- title: The title of the webpage -->
     <title>BoilerPlate</title>
     <!-- 
@@ -37,6 +37,19 @@
     <!-- preconnect: this is a link tag with rel="preconnect" which is used to establish an early connection to a third-party domain before any resources from that domain are requested. This can improve performance by reducing the time it takes to establish a connection to the domain. -->
     <link rel="preconnect" href="https://example.com" />
   </head>
+  <style>
+    html,
+    body {
+      background: #000;
+      color: #fff;
+      font-family:
+        "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    }
+    input::placeholder {
+      font-family:
+        "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    }
+  </style>
   <body>
     <!-- files & folder -->
     <!-- files: index.html, style.css, script.js is kind of files which are used in web development -->
@@ -76,7 +89,8 @@
     <p>This is an <em>italic</em> paragraph.</p>
     <!-- abbr tag: abbreviation -->
     <p>
-      HTML is very important<abbr title="Hypertext Markup Language">HTML</abbr>
+      <abbr title="Hypertext Markup Language">HTML</abbr> is
+      <mark>very important</mark>
       for web development.
     </p>
 
@@ -290,3 +304,37 @@
     </form>
   </body>
 </html>
+<!-- 
+Search Engine Optimization (SEO)
+<meta name="description" content="This is a boilerplate for HTML5">
+<meta name="keywords" content="HTML, CSS, JavaScript, web development, boilerplate"> old method
+<meta name="robots" content="index, follow"> -> index or noindex, follow or nofollow">
+<meta rel="canonical" href="https://example.com"> -> to specify the preferred URL for a webpage when there are multiple URLs that can access the same content. It helps search engines understand which URL to index and display in search results, preventing duplicate content issues and improving SEO.
+open graph meta tags: used to control how a webpage is displayed when shared on social media platforms. They allow you to specify the title, description, and image that will be shown when the webpage is shared on platforms like Facebook, Twitter, LinkedIn, etc. This can help improve the visibility and engagement of your content on social media, which can in turn drive more traffic to your website and improve your SEO.
+
+<meta name="og:title" content="Title of the webpage">
+<meta name="og:description" content="Description of the webpage">
+<meta name="og:image" content="URL of the image to be displayed when shared on social media">
+<meta name="og:url" content="URL of the webpage">
+-->
+
+<!-- 
+Artifical Intelligence Optimization (AIO)
+MarkDown : is a midway b/w plain text and code. which is lingua franca for AI. it is used to format the text in a way that is easy for AI to understand and process. it is used to create headings, lists, links, images, etc. it is also used to create code blocks and inline code. it is a simple and easy to learn syntax that can be used to create well-structured and organized content for AI optimization.
+-->
+
+<!-- 
+Core Web Vitals (CWV): Performance
+Core Web Vitals are a set of specific factors that Google considers important in a webpage's overall user experience. They are part of Google's Page Experience update and are used to measure the performance and usability of a webpage. The three main Core Web Vitals are:
+
+1. Largest Contentful Paint (LCP): This measures the loading performance of a webpage. It calculates the time it takes for the largest content element on the page to become visible to the user. A good LCP score is typically under 2.5 seconds.
+
+2. First Input Delay (FID): This measures the interactivity of a webpage. It calculates the time it takes for the browser to respond to the first user interaction, such as clicking a button or a link. A good FID score is typically under 100 milliseconds.
+
+3. Cumulative Layout Shift (CLS): This measures the visual stability of a webpage. It calculates the amount of unexpected layout shifts that occur during the loading of a webpage. A good CLS score is typically under 0.1.
+By optimizing these Core Web Vitals, website owners can improve the user experience of their webpages, which can lead to higher search engine rankings and increased traffic. It is important to regularly monitor and optimize these metrics to ensure that your website is providing a fast, responsive, and visually stable experience for users
+
+4. INP (Interaction to Next Paint): This measures the time it takes for a webpage to respond to user interactions and update the visual content accordingly. It calculates the time from when a user interacts with an element on the page (such as clicking a button or scrolling) to when the next visual update is rendered on the screen. A good INP score is typically under 200 milliseconds.
+
+5. CLS (Cumulative Layout Shift): This measures the visual stability of a webpage. It calculates the amount of unexpected layout shifts that occur during the loading of a webpage. A good CLS score is typically under 0.1.
+-->
