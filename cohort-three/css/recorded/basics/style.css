@@ -113,3 +113,38 @@ margin: the space outside the border
   border-radius: 50%;
   margin: 1rem auto;
 }
+
+/* 
+background properties:
+background-color: sets the background color of an element
+background-image: sets the background image of an element
+background-size: sets the size of the background image (cover, contain, auto)
+background-position: sets the position of the background image (top, bottom, left, right, center)
+background-repeat: sets whether the background image should repeat (repeat, no-repeat, space,
+background-attachment: sets whether the background image should scroll with the page (scroll, fixed, local)
+background-clip: sets the area where the background is visible (border-box, padding-box, content-box)
+background-origin: sets the area where the background image is positioned (border-box, padding-box, content-box)
+
+display properties:
+display: sets the display behavior of an element (block, inline, inline-block, flex, grid, none)
+- block: takes up the full width of the container and starts on a new line
+- inline: takes up only as much width as necessary and does not start on a new line
+- inline-block: takes up only as much width as necessary but starts on a new line
+- flex: a layout mode that allows for flexible and responsive layouts
+- grid: a layout mode that allows for two-dimensional layouts
+- none: hides the element
+
+
+flex properties:
+- flex-direction: sets the direction of the flex items (row, column, row-reverse, column-reverse)
+- justify-content: sets the alignment of the flex items along the main axis (flex-start, flex-end, center, space-between, space-around, space-evenly)
+- align-items: sets the alignment of the flex items along the cross axis (flex-start, flex-end, center, stretch, baseline)
+- align-content: sets the alignment of the flex lines when there are multiple lines (flex-start, flex-end, center, space-between, space-around, space-evenly)
+- flex-wrap: sets whether the flex items should wrap onto multiple lines (nowrap, wrap, wrap-reverse)     
+- align-self: sets the alignment of a single flex item along the cross axis (auto, flex-start, flex-end, center, stretch, baseline)
+- justify-self: sets the alignment of a single flex item along the main axis (auto, flex-start, flex-end, center, stretch)
+- wrap: sets whether the flex items should wrap onto multiple lines (nowrap, wrap, wrap-reverse)
+- no-wrap: prevents the flex items from wrapping onto multiple lines
+- wrap-reverse: wraps the flex items onto multiple lines in reverse order
+*/
+
