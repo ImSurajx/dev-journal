@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Col-Span Practice</title>
+  </head>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family:
+        "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+      box-sizing: border-box;
+    }
+    html,
+    body {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      width: 100px;
+      height: 50px;
+      text-align: center;
+      border: 1px solid #fff;
+    }
+    .red {
+      background-color: #ff0000;
+    }
+
+    .yellow {
+      background-color: #ffff00;
+    }
+
+    .green {
+      background-color: #00c853;
+    }
+
+    .light-blue {
+      background-color: #19b5fe;
+    }
+
+    .blue {
+      background-color: #1976d2;
+    }
+
+    .purple {
+      background-color: #7b1fa2;
+    }
+
+    .orange {
+      background-color: #ffc107;
+    }
+  </style>
+  <body>
+    <table border="1">
+      <tr>
+        <td rowspan="3" colspan="1" class="red">1</td>
+        <td rowspan="2" colspan="1" class="red">1</td>
+        <td rowspan="1" colspan="2" class="red">1</td>
+        <td rowspan="3" colspan="1" class="red">1</td>
+        <td rowspan="1" colspan="2" class="red">1</td>
+      </tr>
+      <tr>
+        <td rowspan="1" colspan="1" class="orange">2</td>
+        <td rowspan="1" colspan="1" class="orange">2</td>
+        <td rowspan="1" colspan="1" class="orange">2</td>
+        <td rowspan="1" colspan="1" class="orange">2</td>
+      </tr>
+      <tr>
+        <td rowspan="1" colspan="2" class="yellow">3</td>
+        <td rowspan="1" colspan="1" class="yellow">3</td>
+        <td rowspan="1" colspan="1" class="yellow">3</td>
+        <td rowspan="3" colspan="1" class="yellow">3</td>
+      </tr>
+      <tr>
+        <td rowspan="1" colspan="1" class="green">4</td>
+        <td rowspan="1" colspan="2" class="green">4</td>
+        <td rowspan="1" colspan="3" class="green">4</td>
+      </tr>
+      <tr>
+        <td rowspan="1" colspan="1" class="light-blue">5</td>
+        <td rowspan="1" colspan="2" class="light-blue">5</td>
+        <td rowspan="2" colspan="1" class="light-blue">5</td>
+        <td rowspan="1" colspan="2" class="light-blue">5</td>
+      </tr>
+      <tr>
+        <td rowspan="1" colspan="1" class="blue">6</td>
+        <td rowspan="1" colspan="2" class="blue">6</td>
+        <td rowspan="1" colspan="3" class="blue">6</td>
+      </tr>
+      <tr>
+        <td rowspan="4" colspan="1" class="purple">7</td>
+        <td rowspan="2" colspan="2" class="purple">7</td>
+        <td rowspan="1" colspan="1" class="purple">7</td>
+        <td rowspan="1" colspan="3" class="purple">7</td>
+      </tr>
+      <tr>
+        <td rowspan="3" colspan="1" class="red">8</td>
+        <td rowspan="3" colspan="3" class="red">8</td>
+      </tr>
+      <tr>
+        <td rowspan="1" colspan="1" class="orange">9</td>
+        <td rowspan="1" colspan="1" class="orange">9</td>
+      </tr>
+      <tr>
+        <td rowspan="1" colspan="1" class="yellow">10</td>
+        <td rowspan="1" colspan="1" class="yellow">10</td>
+      </tr>
+      <tr>
+        <td rowspan="1" colspan="1" class="green">11</td>
+        <td rowspan="1" colspan="4" class="green">11</td>
+        <td rowspan="1" colspan="1" class="green">11</td>
+        <td rowspan="2" colspan="1" class="green">11</td>
+      </tr>
+      <tr>
+        <td rowspan="1" colspan="3" class="light-blue">12</td>
+        <td rowspan="1" colspan="1" class="light-blue">12</td>
+        <td rowspan="2" colspan="1" class="light-blue">12</td>
+        <td rowspan="2" colspan="1" class="light-blue">12</td>
+      </tr>
+      <tr>
+        <td rowspan="4" colspan="3" class="blue">13</td>
+        <td rowspan="1" colspan="1" class="blue">13</td>
+        <td rowspan="1" colspan="1" class="blue">13</td>
+      </tr>
+      <tr>
+        <td rowspan="1" colspan="1" class="purple">14</td>
+        <td rowspan="1" colspan="1" class="purple">14</td>
+        <td rowspan="1" colspan="1" class="purple">14</td>
+        <td rowspan="1" colspan="1" class="purple">14</td>
+      </tr>
+      <tr>
+        <td rowspan="1" colspan="1" class="red">15</td>
+        <td rowspan="1" colspan="1" class="red">15</td>
+        <td rowspan="1" colspan="2" class="red">15</td>
+      </tr>
+      <tr>
+        <td rowspan="2" colspan="1" class="orange">16</td>
+        <td rowspan="2" colspan="1" class="orange">16</td>
+        <td rowspan="1" colspan="2" class="orange">16</td>
+      </tr>
+      <tr>
+        <td rowspan="1" colspan="1" class="yellow">17</td>
+        <td rowspan="1" colspan="2" class="yellow">17</td>
+        <td rowspan="1" colspan="2" class="yellow">17</td>
+      </tr>
+      <tr>
+        <td rowspan="1" colspan="1" class="green">18</td>
+        <td rowspan="1" colspan="6" class="green">18</td>
+      </tr>
+    </table>
+  </body>
+</html>
