@@ -148,3 +148,22 @@ flex properties:
 - wrap-reverse: wraps the flex items onto multiple lines in reverse order
 */
 
+
+/* 
+grid properties:
+- grid: a shorthand property for defining grid-template-columns, grid-template-rows, and grid-template-areas in a single declaration (e.g. grid: "header header header" 100px "sidebar content content" 200px "footer footer footer" 100px;)
+- grid-template-columns: defines the number and size of columns in a grid layout (e.g. grid-template-columns: 100px 200px 1fr;)
+- grid-template-rows: defines the number and size of rows in a grid layout (e.g. grid-template-rows: 100px 200px 1fr;)
+- grid-gap: defines the gap between rows and columns in a grid layout (e.g. grid-gap: 10px;)
+- grid-column-gap: defines the gap between columns in a grid layout (e.g. grid-column-gap: 10px;)
+- grid-row-gap: defines the gap between rows in a grid layout (e.g. grid-row-gap: 10px;)
+- grid-template-areas: defines named grid areas for layout (e.g. grid-template-areas: "header header header" "sidebar content content" "footer footer footer";)
+- grid-area: assigns an item to a named grid area (e.g. grid-area: header;) 
+- grid-column: specifies the start and end positions of a grid item in terms of columns (e.g. grid-column: 1 / 3;)
+- grid-row: specifies the start and end positions of a grid item in terms of rows (e.g. grid-row: 1 / 2;)
+- grid-auto-columns: defines the size of implicitly created columns in a grid layout (e.g. grid-auto-columns: 100px;)
+- grid-auto-rows: defines the size of implicitly created rows in a grid layout (e.g. grid-auto-rows: 100px;)
+- grid-auto-flow: controls how auto-placed items are flowed in the grid layout (e.g. grid-auto-flow: row; or grid-auto-flow: column;)
+- grid-template: a shorthand property for defining grid-template-rows, grid-template-columns, and grid-template-areas in a single declaration (e.g. grid-template: "header header header" 100px "sidebar content content" 200px "footer footer footer" 100px;)
+- grid fraction unit: a flexible length unit that represents a fraction of the available space in the grid container (e.g. grid-template-columns: 1fr 2fr; means the first column will take up 1/3 of the available space and the second column will take up 2/3 of the available space)
+*/
