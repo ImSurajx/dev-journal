@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+  padding: 0.5rem;
+}
+
+/* #first-heading {
+  color: crimson;
+}
+
+.its-class{
+    color: blue;
+}
+
+p{
+    color:  orange;
+} */
+/* 
+selectors:
+- help us select the element we want to style
+- we can select an element by its tag name, class, id, attribute, etc.
+
+universal selector: * - selects all elements
+type selector: selects elements by their tag name, e.g. h1, p, div
+class selector: selects elements by their class attribute, e.g. .container
+id selector: selects an element by its id attribute, e.g. #main 
+grouping selector: selects multiple elements, e.g. h1, h2, h3
+
+properties & units:
+color: sets the color of the text
+background-color: sets the background color of an element
+hex: #RRGGBB - where RR, GG, BB are hexadecimal values for red, green, and blue (00 to FF)
+rgb: rgb(R, G, B) - where R, G, B are decimal values
+rgba: rgba(R, G, B, A) - where R, G, B are decimal values and A is the alpha (opacity) value (0 to 1)
+px: pixels - a fixed unit of measurement
+em: relative to the font-size of the element (1em = current font size)
+rem: relative to the font-size of the root element (1rem = font size of the
+%: relative to the parent element (50% = half of the parent element's size)
+
+text properties:
+font-size: sets the size of the text
+font-family: sets the font of the text
+font-weight: sets the weight (boldness) of the text
+color: sets the color of the text
+text-align: sets the horizontal alignment of the text (left, right, center, justify)
+text-decoration: sets the decoration of the text (underline, overline, line-through)
+text-transform: sets the case of the text (uppercase, lowercase, capitalize)
+line-height: sets the height of a line of text
+letter-spacing: sets the spacing between letters
+word-spacing: sets the spacing between words
+*/
+/* div{
+    height: 100%;
+    width: 100%;
+    background: crimson;
+} */
+
+h1 {
+  color: crimson;
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 2rem;
+  text-transform: uppercase;
+  font-family:
+    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+h3 {
+  color: blue;
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 1rem;
+  text-transform: capitalize;
+}
+
+p {
+  color: orange;
+  font-size: 1.5rem;
+  text-align: justify;
+  margin-top: 1rem;
+  line-height: 3rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  font-weight: 90-p;
+}
+
+/* 
+box model:
+height: the height of the element
+width: the width of the element
+content: the actual content of the element
+padding: the space between the content and the border
+border: the line around the element
+margin: the space outside the border    
+*/
+
+.box {
+  height: 200px;
+  width: 200px;
+  background: crimson;
+  padding: 1rem;
+  border: 10px ridge #000;
+  border-radius: 50%;
+  margin: 1rem auto;
+}
