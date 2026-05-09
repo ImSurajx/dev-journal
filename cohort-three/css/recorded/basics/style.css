@@ -64,7 +64,7 @@ word-spacing: sets the spacing between words
     background: crimson;
 } */
 
-h1 {
+/* h1 {
   color: crimson;
   font-size: 3rem;
   text-align: center;
@@ -92,7 +92,7 @@ p {
   letter-spacing: 0.2rem;
   text-transform: uppercase;
   font-weight: 90-p;
-}
+} */
 
 /* 
 box model:
@@ -103,7 +103,7 @@ padding: the space between the content and the border
 border: the line around the element
 margin: the space outside the border    
 */
-
+/* 
 .box {
   height: 200px;
   width: 200px;
@@ -112,7 +112,7 @@ margin: the space outside the border
   border: 10px ridge #000;
   border-radius: 50%;
   margin: 1rem auto;
-}
+} */
 
 /* 
 background properties:
@@ -148,7 +148,6 @@ flex properties:
 - wrap-reverse: wraps the flex items onto multiple lines in reverse order
 */
 
-
 /* 
 grid properties:
 - grid: a shorthand property for defining grid-template-columns, grid-template-rows, and grid-template-areas in a single declaration (e.g. grid: "header header header" 100px "sidebar content content" 200px "footer footer footer" 100px;)
@@ -167,3 +166,28 @@ grid properties:
 - grid-template: a shorthand property for defining grid-template-rows, grid-template-columns, and grid-template-areas in a single declaration (e.g. grid-template: "header header header" 100px "sidebar content content" 200px "footer footer footer" 100px;)
 - grid fraction unit: a flexible length unit that represents a fraction of the available space in the grid container (e.g. grid-template-columns: 1fr 2fr; means the first column will take up 1/3 of the available space and the second column will take up 2/3 of the available space)
 */
+
+/* 
+position -> control position of element
+static -> default
+relative -> can we change
+absoulte -> move element to thte top in z-index
+fixed -> position fixed
+sticy -> a certain part of our webpage is fixed for certain position.
+*/
+
+.box1 {
+  height: 200px;
+  width: 200px;
+  background: crimson;
+}
+.box2 {
+  height: 200px;
+  width: 200px;
+  background: royalblue;
+}
+.box3 {
+  height: 200px;
+  width: 200px;
+  background: coral;
+}
