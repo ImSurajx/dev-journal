@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ASTRO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- ========================= -->
+      <!-- Header -->
+      <!-- ========================= -->
+      <header class="header">
+        <div class="container">
+          <!-- Logo -->
+          <div class="logo">
+            <h1 class="logo-text">ASTRO<span>.</span></h1>
+          </div>
+
+          <!-- Navigation -->
+          <nav class="navbar">
+            <ul class="nav-list">
+              <li class="nav-item">
+                <a href="#" class="nav-link">PRODUCTS</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">CATEGORY</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">ABOUT US</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">CONTACT</a>
+              </li>
+            </ul>
+          </nav>
+
+          <!-- Header Actions -->
+          <div class="header-actions">
+            <button class="icon-btn search-btn">
+              <i class="ri-search-line"></i>
+            </button>
+
+            <button class="icon-btn cart-btn">
+              <i class="ri-shopping-cart-line"></i>
+            </button>
+
+            <button class="icon-btn user-btn">
+              <i class="ri-user-line"></i>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- ========================= -->
+      <!-- Product Section -->
+      <!-- ========================= -->
+      <main class="product-page">
+        <section class="product-section">
+          <div class="container">
+            <div class="product-layout">
+              <!-- ========================= -->
+              <!-- Left Content -->
+              <!-- ========================= -->
+              <aside class="product-info">
+                <span class="product-badge"> NEW </span>
+
+                <h2 class="product-title">
+                  ASTRO <br />
+                  WINTER <br />
+                  ARMOR <span>II</span>
+                </h2>
+
+                <h3 class="product-price">$560</h3>
+
+                <!-- Description -->
+                <div class="product-description">
+                  <h4 class="section-title">DESCRIPTION</h4>
+
+                  <p>
+                    A next-gen cold war jacket. The essence of retro style and
+                    the resilience you need for extreme winter conditions.
+                    Engineered to provide versatile function for your winter
+                    wardrobe, accented with strategic utility details.
+                  </p>
+
+                  <a href="#" class="read-more">
+                    READ MORE
+                    <i class="ri-arrow-right-s-line"></i>
+                  </a>
+                </div>
+
+                <!-- Accordion -->
+                <div class="product-accordion">
+                  <div class="accordion-item">
+                    <button class="accordion-btn">
+                      MATERIAL & CARE
+                      <i class="ri-arrow-down-s-line"></i>
+                    </button>
+                  </div>
+
+                  <div class="accordion-item">
+                    <button class="accordion-btn">
+                      SHIPPING & RETURNS
+                      <i class="ri-arrow-down-s-line"></i>
+                    </button>
+                  </div>
+                </div>
+              </aside>
+
+              <!-- ========================= -->
+              <!-- Product Image -->
+              <!-- ========================= -->
+              <div class="product-image-wrapper">
+                <div class="product-image">
+                  <img
+                    src="./assets/images/main-jacket.png"
+                    alt="Astro Winter Armor Jacket"
+                  />
+                </div>
+
+                <!-- Feature Icons -->
+                <div class="product-features">
+                  <div class="feature-item">
+                    <i class="ri-snowflake-line"></i>
+                    <span>EXTREME WARMTH</span>
+                  </div>
+
+                  <div class="feature-item">
+                    <i class="ri-shield-line"></i>
+                    <span>WIND RESISTANT</span>
+                  </div>
+
+                  <div class="feature-item">
+                    <i class="ri-leaf-line"></i>
+                    <span>LIGHTWEIGHT</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ========================= -->
+              <!-- Product Sidebar -->
+              <!-- ========================= -->
+              <aside class="product-sidebar">
+                <!-- Size -->
+                <div class="sidebar-block">
+                  <h4 class="sidebar-title">SIZE</h4>
+
+                  <div class="size-options">
+                    <button class="size-btn">S</button>
+
+                    <button class="size-btn active">M</button>
+
+                    <button class="size-btn">L</button>
+
+                    <button class="size-btn">XL</button>
+                  </div>
+
+                  <a href="#" class="size-guide">
+                    SIZE GUIDE
+                    <i class="ri-arrow-right-s-line"></i>
+                  </a>
+                </div>
+
+                <!-- Colors -->
+                <div class="sidebar-block">
+                  <h4 class="sidebar-title">COLOR</h4>
+
+                  <div class="color-grid">
+                    <!-- Beige -->
+                    <div class="color-card">
+                      <div class="color-image active">
+                        <img
+                          src="./assets/images/main-jacket.png"
+                          alt="Beige Jacket"
+                        />
+                      </div>
+
+                      <span class="color-name"> BEIGE </span>
+                    </div>
+
+                    <!-- Red -->
+                    <div class="color-card">
+                      <div class="color-image">
+                        <img
+                          src="./assets/images/red-jacket.png"
+                          alt="Red Jacket"
+                        />
+                      </div>
+
+                      <span class="color-name"> RED </span>
+                    </div>
+
+                    <!-- Black -->
+                    <div class="color-card">
+                      <div class="color-image">
+                        <img
+                          src="./assets/images/brown-jacket.png"
+                          alt="Black Jacket"
+                        />
+                      </div>
+
+                      <span class="color-name"> BROWN </span>
+                    </div>
+
+                    <!-- White -->
+                    <div class="color-card">
+                      <div class="color-image brown">
+                        <img
+                          src="./assets/images/black-jacket.png"
+                          alt="White Jacket"
+                        />
+                      </div>
+
+                      <span class="color-name"> BLACK </span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="product-actions">
+                  <button class="wishlist-btn">
+                    <i class="ri-heart-line"></i>
+                    ADD TO WISHLIST
+                  </button>
+
+                  <button class="bag-btn">
+                    ADD TO BAG
+                    <i class="ri-shopping-bag-line"></i>
+                  </button>
+                </div>
+              </aside>
+            </div>
+
+            <!-- ========================= -->
+            <!-- Feature Cards -->
+            <!-- ========================= -->
+            <section class="feature-cards">
+              <!-- Card 1 -->
+              <div class="feature-card">
+                <div class="card-image">
+                  <img src="./assets/images/angle01.png" alt="" />
+                </div>
+
+                <div class="card-content">
+                  <h3>
+                    3X <br />
+                    WATER-REPELLENT
+                  </h3>
+
+                  <p>
+                    The fabric repels rain, snow and moisture while keeping you
+                    dry and comfortable.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="feature-card">
+                <div class="card-image">
+                  <img src="./assets/images/angle2.png" alt="" />
+                </div>
+
+                <div class="card-content">
+                  <h3>
+                    3D AREAS <br />
+                    PUFFERED
+                  </h3>
+
+                  <p>
+                    Strategically padded zones trap heat and maximize insulation
+                    without the bulk.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="feature-card">
+                <div class="card-image">
+                  <img src="./assets/images/angle3.png" alt="" />
+                </div>
+
+                <div class="card-content">
+                  <h3>INSULATION</h3>
+
+                  <p>
+                    Advanced thermal filling locks in warmth up to -30°C for
+                    extreme conditions.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Card 4 -->
+              <div class="feature-card">
+                <div class="card-image">
+                  <img src="./assets/images/angle04.png" alt="" />
+                </div>
+
+                <div class="card-content">
+                  <h3>
+                    UTILITY <br />
+                    POCKETS
+                  </h3>
+
+                  <p>Multi-functional pockets for secure storage on the go.</p>
+                </div>
+              </div>
+            </section>
+
+            <!-- ========================= -->
+            <!-- Bottom Features -->
+            <!-- ========================= -->
+            <section class="bottom-features">
+              <div class="bottom-feature">
+                <i class="ri-snowflake-line"></i>
+
+                <div>
+                  <h4>PREMIUM FABRICS</h4>
+                  <p>Durable, high-performance materials.</p>
+                </div>
+              </div>
+
+              <div class="bottom-feature">
+                <i class="ri-shield-check-line"></i>
+
+                <div>
+                  <h4>THERMAL PROTECTION</h4>
+                  <p>Built for extreme winter climates.</p>
+                </div>
+              </div>
+
+              <div class="bottom-feature">
+                <i class="ri-focus-2-line"></i>
+
+                <div>
+                  <h4>DESIGNED FOR FUNCTION</h4>
+                  <p>Every detail serves a purpose.</p>
+                </div>
+              </div>
+
+              <div class="bottom-feature">
+                <i class="ri-star-line"></i>
+
+                <div>
+                  <h4>LIMITED EDITION</h4>
+                  <p>Exclusive drops, limited quantities.</p>
+                </div>
+              </div>
+            </section>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
