@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Orbitron", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+}
+main .hero {
+  height: 100%;
+  width: 100%;
+  background: url(./assets/images/background.png);
+  background-position: center;
+  background-size: cover;
+  padding: 2rem;
+}
+main .hero header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+main .hero header .logo {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+main .hero header .logo span {
+  text-transform: lowercase;
+}
+main .hero header .navbar {
+  display: flex;
+  gap: 1rem;
+}
+main .hero header .navbar a {
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+}
+main .hero header .navbar a span {
+  font-size: 0.5rem;
+  color: orange;
+}
+main .hero header .social-links {
+  display: flex;
+  gap: 1.5rem;
+}
+main .hero header .social-links a {
+  text-decoration: none;
+}
+main .hero header .social-links a i {
+  font-size: 1.7rem;
+  color: #fff;
+}
+main .hero .hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  color: #fff;
+}
+main .hero .hero-content .hero-subtitle {
+  text-align: left;
+  font-size: 1rem;
+  width: 60%;
+}
+main .hero .hero-content .hero-title {
+  font-family: "Audiowide", sans-serif;
+  font-size: 4.25rem;
+  width: 60%;
+}
+main .hero .hero-content .hero-description {
+  width: 60%;
+  text-align: right;
+}
+main .hero .hero-content .hero-character {
+  position: absolute;
+  top: 40%;
+  height: 60%;
+  width: 80%;
+}
+main .hero .hero-content .hero-character img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+main .hero .hero-content .hero-btn {
+  outline: none;
+  border: none;
+  padding: 0.8rem 2rem;
+  margin-top: 1rem;
+  font-size: 0.5rem;
+  background: #f7d67e;
+  color: #000;
+  position: absolute;
+  top: 65%;
+  z-index: 1;
+}
+main .hero-curve {
+  position: absolute;
+  bottom: -35%;
+  width: 100%;
+  height: 50%;
+  color: #fff;
+  clip-path: polygon(0% 10%, 8% 14%, 16% 18%, 26% 22%, 36% 25%, 46% 27%, 50% 28%, 54% 27%, 64% 25%, 74% 22%, 84% 18%, 92% 14%, 100% 10%, 100% 100%, 0% 100%);
+  background: #2c2631;
+}
+main .hero-curve .vision {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .hero-curve .vision .section-heading {
+  margin-top: 6rem;
+  font-family: "Audiowide", sans-serif;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .hero-curve .vision .section-heading .heading-divider {
+  width: 80%;
+  border: 1px solid #fff;
+}
+main .hero-curve .vision .vision-content {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  width: 80%;
+  text-align: justify;
+}/*# sourceMappingURL=style.css.map */
