@@ -1,0 +1,365 @@
+:root {
+  --font-primary: "Bebas Neue", sans-serif;
+  --font-secondary: "Montserrat", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background: #fcf4ec;
+}
+
+.website .header {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.website .header .logo {
+  height: 2.5rem;
+  text-decoration: none;
+}
+.website .header .logo img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+.website .header .navbar {
+  display: flex;
+  font-family: var(--font-primary);
+  gap: 1.5rem;
+}
+.website .header .navbar a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #000;
+}
+.website .header .navbar .active {
+  color: #1e6244;
+  border-bottom: 3px solid #1e6244;
+}
+.website .header .header-actions {
+  display: flex;
+  border: 1px solid black;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  padding: 0.5rem;
+  position: relative;
+}
+.website .header .header-actions .search-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.website .header .header-actions .search-box i {
+  font-size: 1.5rem;
+  color: #f4ab1f;
+}
+.website .header .header-actions .search-box input {
+  display: none;
+}
+.website .header .header-actions .search-box label {
+  font-family: var(--font-secondary);
+  font-size: 0.8rem;
+  margin-right: 2.5rem;
+}
+.website .header .header-actions .cart-btn {
+  border: none;
+  background: transparent;
+  border-left: 1px solid black;
+  padding-left: 1rem;
+}
+.website .header .header-actions .cart-btn i {
+  font-size: 1.5rem;
+}
+.website .header .header-actions .cart-btn .cart-count {
+  position: absolute;
+  top: -5%;
+  right: -4%;
+  background: crimson;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border-radius: 5px;
+  font-family: var(--font-secondary);
+}
+.website .hero {
+  display: grid;
+  grid-template-columns: 33% 45% 22%;
+  grid-template-rows: auto;
+}
+.website .hero .hero-content {
+  padding: 2rem;
+}
+.website .hero .hero-content .hero-badge {
+  font-size: 1.5rem;
+  font-family: var(--font-secondary);
+  border: 3px solid #1e6244;
+  padding: 0.5rem;
+  border-radius: 50px;
+  background: #dae4cb;
+  font-weight: 500;
+  color: #1e6244;
+}
+.website .hero .hero-content .hero-title {
+  margin-top: 2rem;
+  font-size: 5rem;
+  font-family: var(--font-primary);
+}
+.website .hero .hero-content .hero-title span {
+  color: #1e6244;
+}
+.website .hero .hero-content .hero-description {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  font-family: var(--font-secondary);
+  text-align: left;
+}
+.website .hero .hero-content .hero-actions {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+.website .hero .hero-content .hero-actions .primary-btn {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.website .hero .hero-content .hero-actions .primary-btn i {
+  background: #f5ad28;
+  color: #000;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+.website .hero .hero-content .hero-actions .primary-btn {
+  border: none;
+  background: #000;
+  color: #fff;
+  padding: 1rem 2rem 1rem 1rem;
+  font-family: var(--font-primary);
+  font-size: 2rem;
+  border-radius: 50px;
+}
+.website .hero .hero-content .hero-actions .quantity-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  border: none;
+  background: #fff;
+  color: #000;
+  padding: 1rem;
+  font-family: var(--font-primary);
+  font-size: 2rem;
+  border-radius: 50px;
+}
+.website .hero .hero-content .hero-actions .quantity-box button {
+  font-family: var(--font-primary);
+  font-size: 2rem;
+  border: none;
+  outline: none;
+  background: transparent;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  color: #1e6244;
+}
+.website .hero .hero-content .hero-actions .quantity-box span {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  padding: 0rem 0.8rem;
+  color: crimson;
+}
+.website .hero .hero-product img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+.website .hero .hero-features {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.website .hero .hero-features .feature {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.website .hero .hero-features .feature i {
+  padding: 0.8rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+.website .hero .hero-features .feature .ri-leaf-fill {
+  color: #1e6244;
+  border: 2px solid green;
+}
+.website .hero .hero-features .feature .ri-fire-fill {
+  color: orange;
+  border: 2px solid orange;
+}
+.website .hero .hero-features .feature .ri-heart-3-fill {
+  color: red;
+  border: 2px solid red;
+}
+.website .hero .hero-features .feature div h4 {
+  font-family: var(--font-primary);
+  font-size: 2rem;
+}
+.website .hero .hero-features .feature div p {
+  font-family: var(--font-secondary);
+}
+.website .hero .hero-sidebar {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+.website .hero .hero-sidebar .sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.website .hero .hero-sidebar .sidebar-item .sidebar-icon {
+  height: 60px;
+  width: 60px;
+  font-size: 1.5rem;
+  padding: 1rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.website .hero .hero-sidebar .sidebar-item .green {
+  background: #1e6244;
+}
+.website .hero .hero-sidebar .sidebar-item .red {
+  background: crimson;
+}
+.website .hero .hero-sidebar .sidebar-item .orange {
+  background: orange;
+}
+.website .hero .hero-sidebar .sidebar-item div h3 {
+  font-family: var(--font-primary);
+}
+.website .hero .hero-sidebar .sidebar-item div p {
+  font-family: var(--font-secondary);
+  text-align: left;
+}
+.website .products {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.website .products .inner-prod {
+  padding: 2rem;
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  background: #1e6244;
+  border-radius: 25px;
+  color: #fff;
+  font-family: var(--font-primary);
+}
+.website .products .inner-prod .products-heading h2 {
+  width: 50%;
+  font-size: 2rem;
+}
+.website .products .inner-prod .products-heading .slider-actions {
+  display: flex;
+  gap: 2rem;
+}
+.website .products .inner-prod .products-heading .slider-actions .slider-btn {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 50px;
+  border: none;
+  background: #fff;
+  font-size: 1.1rem;
+  border: none;
+}
+.website .products .inner-prod .product-card {
+  display: flex;
+  flex-direction: row;
+  height: 200px;
+  width: 300px;
+  background: #fff;
+  padding: 1rem;
+  color: #000;
+  position: relative;
+  border-radius: 25px;
+  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.1);
+}
+.website .products .inner-prod .product-card img {
+  position: absolute;
+  top: -10%;
+  left: -25%;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 25px;
+}
+.website .products .inner-prod .product-card .product-info {
+  margin-left: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.website .products .inner-prod .product-card .product-info h3 {
+  font-size: 2rem;
+}
+.website .products .inner-prod .product-card .product-info .rating {
+  color: #f4ab1f;
+}
+.website .products .inner-prod .product-card .product-info .rating span {
+  color: #000;
+}
+.website .products .inner-prod .product-card .product-info h4 {
+  font-size: 1.5rem;
+}
+.website .products .inner-prod .product-card .product-info .order-btn {
+  padding: 0.3rem 0.4rem;
+  font-family: var(--font-secondary);
+  border: none;
+  background: crimson;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 50px;
+}/*# sourceMappingURL=style.css.map */
