@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bentoy Grid</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="dashboard">
+      <!-- Card 1 -->
+      <div class="card card1"></div>
+
+      <!-- Card 2 -->
+      <div class="card card2">
+        <div class="circle-wrapper">
+          <!-- Rotating Circle Text -->
+          <svg class="circle-text" viewBox="0 0 300 300">
+            <defs>
+              <path
+                id="circlePath"
+                d="
+            M 150,150
+            m -110,0
+            a 110,110 0 1,1 220,0
+            a 110,110 0 1,1 -220,0
+          "
+              />
+            </defs>
+
+            <text>
+              <textPath href="#circlePath" startOffset="0%">
+                MORE CASES • MORE CASES • MORE CASES •
+              </textPath>
+            </text>
+          </svg>
+
+          <!-- Center Circle -->
+          <div class="circle-center">
+            <i class="ri-flower-line"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card card3">
+        <div class="menu-item">
+          <i class="ri-layout-grid-line"></i>
+
+          <span>Categories</span>
+        </div>
+
+        <div class="menu-item">
+          <i class="ri-bank-card-line"></i>
+
+          <span>Payment</span>
+        </div>
+
+        <div class="menu-item">
+          <i class="ri-user-line"></i>
+
+          <span>Authors</span>
+        </div>
+
+        <div class="menu-item active">
+          <div>
+            <i class="ri-auction-line"></i>
+
+            <span>Auction</span>
+          </div>
+
+          <div class="active-dot"></div>
+        </div>
+
+        <div class="menu-item">
+          <i class="ri-line-chart-line"></i>
+
+          <span>Sales</span>
+        </div>
+
+        <div class="menu-item">
+          <i class="ri-star-line"></i>
+
+          <span>Reviews</span>
+        </div>
+
+        <div class="menu-divider"></div>
+
+        <div class="menu-item">
+          <i class="ri-mail-line"></i>
+
+          <span>Contacts</span>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="card card4">
+        <!-- Top -->
+        <div class="top">
+          <div class="info-item">
+            <i class="ri-emotion-happy-line"></i>
+
+            <p>Only exclusive illustrations</p>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="info-item">
+            <i class="ri-box-3-line"></i>
+
+            <p>We do not sell works on stock</p>
+          </div>
+        </div>
+
+        <!-- Bottom -->
+        <div class="bottom"></div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="card card5">
+        <div>
+          <h2 class="title">BUTUSIC</h2>
+
+          <p class="subtitle">
+            ILLUSTRATIONS<br />
+            EXHIBITION
+          </p>
+          <div class="line"></div>
+
+          <div class="bitcoin-box">
+            <div class="bitcoin-icon">₿</div>
+
+            <p>We accept more than just bitcoins</p>
+          </div>
+        </div>
+
+        <div class="barcode">
+          <img
+            src="https://www.shutterstock.com/image-vector/long-bar-code-600nw-1043015362.jpg"
+            alt="Barcode"
+          />
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="card card6">
+        <div class="location">
+          <i class="ri-map-pin-fill"></i>
+
+          <span> 1217 PURRWEB STREET, LA </span>
+        </div>
+
+        <h3>FIRST EXHIBITION OF ILLUSTRATIONS OFFLINE</h3>
+
+        <p>BUTUSIC.COM/EXHIBITION</p>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="card card7">
+        <!-- Top -->
+        <div class="top">
+          <div class="award-icon">
+            <i class="ri-medal-line"></i>
+          </div>
+
+          <div class="award-icon">
+            <i class="ri-medal-line"></i>
+          </div>
+
+          <div class="award-icon">
+            <i class="ri-medal-line"></i>
+          </div>
+
+          <div class="award-icon">
+            <i class="ri-medal-line"></i>
+          </div>
+
+          <div class="award-icon">
+            <i class="ri-medal-line"></i>
+          </div>
+        </div>
+
+        <!-- Bottom -->
+        <div class="bottom">
+          <img src="./assets/qr.png" alt="QR Code" class="qr-image" />
+
+          <div class="qr-content">
+            <h3>APPSTORE</h3>
+
+            <p>Download the app and get 10% off your first purchase</p>
+          </div>
+
+          <button class="arrow-btn">
+            <i class="ri-arrow-right-up-line"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="card card8">
+        <div class="review-left">
+          <h2>ONLY THE BEST AUTHORS</h2>
+
+          <p>184 guys with a unique vision</p>
+        </div>
+
+        <div class="review-right">
+          <div>
+            <h3>4.97</h3>
+
+            <div class="stars">★ ★ ★ ★ ☆</div>
+          </div>
+
+          <button class="review-btn">
+            BEST REVIEWS
+
+            <i class="ri-arrow-right-s-line"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

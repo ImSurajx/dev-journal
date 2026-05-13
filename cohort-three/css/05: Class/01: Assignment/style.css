@@ -1,0 +1,354 @@
+:root {
+  --font-primary: "Poppins", sans-serif;
+  --radius-large: 20px;
+  --border-color: #d4f256;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-primary);
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background: #000;
+  color: #fff;
+}
+
+body {
+  padding: 2rem;
+}
+body .dashboard {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 220px;
+  grid-template-areas: "card1 card2 card3 card4" "card5 card6 card3 card4" "card5 card7 card8 card8 ";
+  gap: 0.5rem;
+}
+body .dashboard .card,
+body .dashboard .top,
+body .dashboard .bottom {
+  border-radius: var(--radius-large);
+}
+body .dashboard .card1 {
+  background: url(./assets/char1.jpg);
+  background-size: 200%;
+  background-position: center 10%;
+  background-repeat: no-repeat;
+  grid-area: card1;
+}
+body .dashboard .card2 {
+  background: whitesmoke;
+  grid-area: card2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .dashboard .card2 .circle-wrapper {
+  position: relative;
+  width: 260px;
+  height: 260px;
+}
+body .dashboard .card2 .circle-wrapper .circle-text {
+  width: 100%;
+  height: 100%;
+  animation: rotateText 12s linear infinite;
+}
+body .dashboard .card2 .circle-wrapper .circle-text text {
+  fill: #000;
+  font-size: 1.5rem;
+  letter-spacing: 4.5px;
+  text-transform: uppercase;
+}
+body .dashboard .card2 .circle-wrapper .circle-center {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .dashboard .card2 .circle-wrapper .circle-center i {
+  font-size: 4rem;
+  color: #000;
+}
+@keyframes rotateText {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+body .dashboard .card3 {
+  grid-area: card3;
+  background: #000;
+  border: 1.5px solid var(--border-color);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1rem;
+}
+body .dashboard .card3 .menu-item i {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+body .dashboard .card3 .menu-item span {
+  text-transform: capitalize;
+}
+body .dashboard .card3 .active {
+  background: #333;
+  padding: 0.5rem;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body .dashboard .card3 .active i {
+  color: var(--border-color);
+}
+body .dashboard .card3 .active .active-dot {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: plum;
+}
+body .dashboard .card3 .menu-divider {
+  margin-top: 1.2rem;
+  height: 2px;
+  background: var(--border-color);
+}
+body .dashboard .card4 {
+  background: transparent;
+  grid-area: card4;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 80%;
+  gap: 0.5rem;
+}
+body .dashboard .card4 .top {
+  background: #8643db;
+  display: flex;
+  padding: 1rem;
+}
+body .dashboard .card4 .top .divider {
+  width: 0.1rem;
+  background: whitesmoke;
+}
+body .dashboard .card4 .top .info-item {
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  width: 50%;
+}
+body .dashboard .card4 .top .info-item i {
+  font-size: 1.3rem;
+}
+body .dashboard .card4 .top .info-item p {
+  font-size: 0.5rem;
+}
+body .dashboard .card4 .bottom {
+  background: url(./assets/char2.jpg);
+  background-size: 120%;
+  background-position: center 10%;
+  background-repeat: no-repeat;
+}
+body .dashboard .card5 {
+  grid-area: card5;
+  background: #000;
+  border: 2px solid var(--border-color);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body .dashboard .card5 .title {
+  font-size: 2.5rem;
+  text-align: center;
+}
+body .dashboard .card5 .subtitle {
+  color: #8643db;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+}
+body .dashboard .card5 .line {
+  width: 100%;
+  height: 2px;
+  background: var(--border-color);
+  margin-top: 1rem;
+}
+body .dashboard .card5 .bitcoin-box {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+body .dashboard .card5 .bitcoin-box .bitcoin-icon {
+  height: 50px;
+  width: 70px;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  background: var(--border-color);
+  margin-right: 0.5rem;
+  border-radius: 10px;
+}
+body .dashboard .card5 .bitcoin-box p {
+  font-size: 0.8rem;
+}
+body .dashboard .card5 .barcode {
+  width: 100%;
+  height: 3rem;
+}
+body .dashboard .card5 .barcode img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+body .dashboard .card6 {
+  grid-area: card6;
+  background: #333;
+  padding: 0.5rem;
+}
+body .dashboard .card6 .location {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+body .dashboard .card6 .location span {
+  font-size: 0.8rem;
+  color: #888;
+}
+body .dashboard .card6 .location i {
+  font-size: 1.2rem;
+  border: 1px solid black;
+  height: 35px;
+  width: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #000;
+  background: var(--border-color);
+}
+body .dashboard .card6 h3 {
+  margin-top: 1rem;
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+body .dashboard .card6 p {
+  margin-top: 0.5rem;
+  font-size: 0.5rem;
+  color: #888;
+}
+body .dashboard .card7 {
+  background: rosybrown;
+  grid-area: card7;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0.5rem;
+  background: transparent;
+}
+body .dashboard .card7 .top {
+  background: orangered;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+body .dashboard .card7 .top .award-icon i {
+  font-size: 3rem;
+}
+body .dashboard .card7 .bottom {
+  background: var(--border-color);
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body .dashboard .card7 .bottom img {
+  height: 80px;
+  width: 80px;
+}
+body .dashboard .card7 .bottom .qr-content h3 {
+  font-size: 0.8rem;
+}
+body .dashboard .card7 .bottom .qr-content p {
+  font-size: 0.5rem;
+}
+body .dashboard .card7 .bottom .arrow-btn {
+  position: relative;
+  background: transparent;
+  border: none;
+}
+body .dashboard .card7 .bottom .arrow-btn i {
+  position: absolute;
+  bottom: 10%;
+  right: 0;
+  font-size: 2rem;
+}
+body .dashboard .card8 {
+  grid-area: card8;
+  background: #fff;
+  color: #000;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+body .dashboard .card8 .review-left {
+  width: 45%;
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body .dashboard .card8 .review-left h2 {
+  font-weight: 400;
+}
+body .dashboard .card8 .review-left p {
+  font-size: 1rem;
+}
+body .dashboard .card8 .review-right {
+  width: 45%;
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+body .dashboard .card8 .review-right h3 {
+  font-size: 3rem;
+  font-weight: 300;
+  text-align: right;
+}
+body .dashboard .card8 .review-right .stars {
+  color: var(--border-color);
+}
+body .dashboard .card8 .review-right .review-btn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  background: #8643db;
+  color: #fff;
+  border-radius: 10px;
+}/*# sourceMappingURL=style.css.map */
